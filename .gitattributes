@@ -1,0 +1,7 @@
+* text=auto eol=lf
+
+# Preserve the byte-level registered manifests and released CSV outputs.
+*.csv -text
+
+*.png binary
+*.pdf binary

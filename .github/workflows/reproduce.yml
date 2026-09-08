@@ -1,0 +1,31 @@
+name: Reproduce released analysis
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -r requirements-analysis.txt
+      - name: Validate task splits
+        run: python -m experiments.training_axes.task
+      - name: Reproduce locked analysis
+        run: |
+          python -m experiments.training_axes.analyze_locked_v2 \
+            --cells /tmp/v2_locked_cells.csv \
+            --contrasts /tmp/v2_locked_contrasts.json \
+            --report /tmp/V2_LOCKED_REPORT.md
+          cmp /tmp/v2_locked_cells.csv experiments/training_axes/v2_locked_cells.csv
+          cmp /tmp/v2_locked_contrasts.json experiments/training_axes/v2_locked_contrasts.json
+          cmp /tmp/V2_LOCKED_REPORT.md experiments/training_axes/V2_LOCKED_REPORT.md
+      - name: Reproduce public figure
+        run: |
+          python -m experiments.training_axes.plot_v2 \
+            --png /tmp/v2_overview.png --pdf /tmp/v2_overview.pdf

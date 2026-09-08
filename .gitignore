@@ -1,0 +1,16 @@
+.DS_Store
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Training artifacts. Released V2 JSONL trajectories are explicitly retained.
+experiments/training_axes/checkpoints*/
+experiments/training_axes/gate_checkpoints/
+experiments/training_axes/gate_results/
+experiments/training_axes/results_task2/
+experiments/training_axes/locked_results_task2/
+experiments/training_axes/*.log

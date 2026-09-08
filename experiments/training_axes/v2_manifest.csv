@@ -1,0 +1,325 @@
+config_id,seed,compression,weight_decay,difficulty,train_dists,abstraction,capacity,family,width,layers,batch_size,steps,learning_rate,invariant_weight,representation_weight,latent_weight,mapping_weight
+v2_c-none_d-easy_a-concrete_p-tight_s-00,0,none,0.0,easy,5 6 7 8 9,concrete,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-concrete_p-tight_s-01,1,none,0.0,easy,5 6 7 8 9,concrete,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-concrete_p-tight_s-02,2,none,0.0,easy,5 6 7 8 9,concrete,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-concrete_p-tight_s-03,3,none,0.0,easy,5 6 7 8 9,concrete,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-concrete_p-tight_s-04,4,none,0.0,easy,5 6 7 8 9,concrete,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-concrete_p-tight_s-05,5,none,0.0,easy,5 6 7 8 9,concrete,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-concrete_p-moderate_s-00,0,none,0.0,easy,5 6 7 8 9,concrete,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-concrete_p-moderate_s-01,1,none,0.0,easy,5 6 7 8 9,concrete,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-concrete_p-moderate_s-02,2,none,0.0,easy,5 6 7 8 9,concrete,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-concrete_p-moderate_s-03,3,none,0.0,easy,5 6 7 8 9,concrete,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-concrete_p-moderate_s-04,4,none,0.0,easy,5 6 7 8 9,concrete,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-concrete_p-moderate_s-05,5,none,0.0,easy,5 6 7 8 9,concrete,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-concrete_p-wide_s-00,0,none,0.0,easy,5 6 7 8 9,concrete,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-concrete_p-wide_s-01,1,none,0.0,easy,5 6 7 8 9,concrete,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-concrete_p-wide_s-02,2,none,0.0,easy,5 6 7 8 9,concrete,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-concrete_p-wide_s-03,3,none,0.0,easy,5 6 7 8 9,concrete,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-concrete_p-wide_s-04,4,none,0.0,easy,5 6 7 8 9,concrete,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-concrete_p-wide_s-05,5,none,0.0,easy,5 6 7 8 9,concrete,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-invariant_p-tight_s-00,0,none,0.0,easy,5 6 7 8 9,invariant,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-invariant_p-tight_s-01,1,none,0.0,easy,5 6 7 8 9,invariant,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-invariant_p-tight_s-02,2,none,0.0,easy,5 6 7 8 9,invariant,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-invariant_p-tight_s-03,3,none,0.0,easy,5 6 7 8 9,invariant,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-invariant_p-tight_s-04,4,none,0.0,easy,5 6 7 8 9,invariant,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-invariant_p-tight_s-05,5,none,0.0,easy,5 6 7 8 9,invariant,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-invariant_p-moderate_s-00,0,none,0.0,easy,5 6 7 8 9,invariant,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-invariant_p-moderate_s-01,1,none,0.0,easy,5 6 7 8 9,invariant,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-invariant_p-moderate_s-02,2,none,0.0,easy,5 6 7 8 9,invariant,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-invariant_p-moderate_s-03,3,none,0.0,easy,5 6 7 8 9,invariant,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-invariant_p-moderate_s-04,4,none,0.0,easy,5 6 7 8 9,invariant,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-invariant_p-moderate_s-05,5,none,0.0,easy,5 6 7 8 9,invariant,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-invariant_p-wide_s-00,0,none,0.0,easy,5 6 7 8 9,invariant,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-invariant_p-wide_s-01,1,none,0.0,easy,5 6 7 8 9,invariant,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-invariant_p-wide_s-02,2,none,0.0,easy,5 6 7 8 9,invariant,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-invariant_p-wide_s-03,3,none,0.0,easy,5 6 7 8 9,invariant,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-invariant_p-wide_s-04,4,none,0.0,easy,5 6 7 8 9,invariant,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-invariant_p-wide_s-05,5,none,0.0,easy,5 6 7 8 9,invariant,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-latent_p-tight_s-00,0,none,0.0,easy,5 6 7 8 9,latent,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-latent_p-tight_s-01,1,none,0.0,easy,5 6 7 8 9,latent,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-latent_p-tight_s-02,2,none,0.0,easy,5 6 7 8 9,latent,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-latent_p-tight_s-03,3,none,0.0,easy,5 6 7 8 9,latent,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-latent_p-tight_s-04,4,none,0.0,easy,5 6 7 8 9,latent,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-latent_p-tight_s-05,5,none,0.0,easy,5 6 7 8 9,latent,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-latent_p-moderate_s-00,0,none,0.0,easy,5 6 7 8 9,latent,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-latent_p-moderate_s-01,1,none,0.0,easy,5 6 7 8 9,latent,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-latent_p-moderate_s-02,2,none,0.0,easy,5 6 7 8 9,latent,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-latent_p-moderate_s-03,3,none,0.0,easy,5 6 7 8 9,latent,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-latent_p-moderate_s-04,4,none,0.0,easy,5 6 7 8 9,latent,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-latent_p-moderate_s-05,5,none,0.0,easy,5 6 7 8 9,latent,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-latent_p-wide_s-00,0,none,0.0,easy,5 6 7 8 9,latent,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-latent_p-wide_s-01,1,none,0.0,easy,5 6 7 8 9,latent,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-latent_p-wide_s-02,2,none,0.0,easy,5 6 7 8 9,latent,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-latent_p-wide_s-03,3,none,0.0,easy,5 6 7 8 9,latent,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-latent_p-wide_s-04,4,none,0.0,easy,5 6 7 8 9,latent,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-easy_a-latent_p-wide_s-05,5,none,0.0,easy,5 6 7 8 9,latent,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-concrete_p-tight_s-00,0,none,0.0,mixed,1 2 3 4 5 6 7 8 9,concrete,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-concrete_p-tight_s-01,1,none,0.0,mixed,1 2 3 4 5 6 7 8 9,concrete,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-concrete_p-tight_s-02,2,none,0.0,mixed,1 2 3 4 5 6 7 8 9,concrete,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-concrete_p-tight_s-03,3,none,0.0,mixed,1 2 3 4 5 6 7 8 9,concrete,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-concrete_p-tight_s-04,4,none,0.0,mixed,1 2 3 4 5 6 7 8 9,concrete,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-concrete_p-tight_s-05,5,none,0.0,mixed,1 2 3 4 5 6 7 8 9,concrete,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-concrete_p-moderate_s-00,0,none,0.0,mixed,1 2 3 4 5 6 7 8 9,concrete,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-concrete_p-moderate_s-01,1,none,0.0,mixed,1 2 3 4 5 6 7 8 9,concrete,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-concrete_p-moderate_s-02,2,none,0.0,mixed,1 2 3 4 5 6 7 8 9,concrete,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-concrete_p-moderate_s-03,3,none,0.0,mixed,1 2 3 4 5 6 7 8 9,concrete,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-concrete_p-moderate_s-04,4,none,0.0,mixed,1 2 3 4 5 6 7 8 9,concrete,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-concrete_p-moderate_s-05,5,none,0.0,mixed,1 2 3 4 5 6 7 8 9,concrete,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-concrete_p-wide_s-00,0,none,0.0,mixed,1 2 3 4 5 6 7 8 9,concrete,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-concrete_p-wide_s-01,1,none,0.0,mixed,1 2 3 4 5 6 7 8 9,concrete,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-concrete_p-wide_s-02,2,none,0.0,mixed,1 2 3 4 5 6 7 8 9,concrete,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-concrete_p-wide_s-03,3,none,0.0,mixed,1 2 3 4 5 6 7 8 9,concrete,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-concrete_p-wide_s-04,4,none,0.0,mixed,1 2 3 4 5 6 7 8 9,concrete,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-concrete_p-wide_s-05,5,none,0.0,mixed,1 2 3 4 5 6 7 8 9,concrete,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-invariant_p-tight_s-00,0,none,0.0,mixed,1 2 3 4 5 6 7 8 9,invariant,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-invariant_p-tight_s-01,1,none,0.0,mixed,1 2 3 4 5 6 7 8 9,invariant,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-invariant_p-tight_s-02,2,none,0.0,mixed,1 2 3 4 5 6 7 8 9,invariant,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-invariant_p-tight_s-03,3,none,0.0,mixed,1 2 3 4 5 6 7 8 9,invariant,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-invariant_p-tight_s-04,4,none,0.0,mixed,1 2 3 4 5 6 7 8 9,invariant,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-invariant_p-tight_s-05,5,none,0.0,mixed,1 2 3 4 5 6 7 8 9,invariant,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-invariant_p-moderate_s-00,0,none,0.0,mixed,1 2 3 4 5 6 7 8 9,invariant,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-invariant_p-moderate_s-01,1,none,0.0,mixed,1 2 3 4 5 6 7 8 9,invariant,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-invariant_p-moderate_s-02,2,none,0.0,mixed,1 2 3 4 5 6 7 8 9,invariant,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-invariant_p-moderate_s-03,3,none,0.0,mixed,1 2 3 4 5 6 7 8 9,invariant,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-invariant_p-moderate_s-04,4,none,0.0,mixed,1 2 3 4 5 6 7 8 9,invariant,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-invariant_p-moderate_s-05,5,none,0.0,mixed,1 2 3 4 5 6 7 8 9,invariant,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-invariant_p-wide_s-00,0,none,0.0,mixed,1 2 3 4 5 6 7 8 9,invariant,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-invariant_p-wide_s-01,1,none,0.0,mixed,1 2 3 4 5 6 7 8 9,invariant,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-invariant_p-wide_s-02,2,none,0.0,mixed,1 2 3 4 5 6 7 8 9,invariant,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-invariant_p-wide_s-03,3,none,0.0,mixed,1 2 3 4 5 6 7 8 9,invariant,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-invariant_p-wide_s-04,4,none,0.0,mixed,1 2 3 4 5 6 7 8 9,invariant,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-invariant_p-wide_s-05,5,none,0.0,mixed,1 2 3 4 5 6 7 8 9,invariant,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-latent_p-tight_s-00,0,none,0.0,mixed,1 2 3 4 5 6 7 8 9,latent,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-latent_p-tight_s-01,1,none,0.0,mixed,1 2 3 4 5 6 7 8 9,latent,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-latent_p-tight_s-02,2,none,0.0,mixed,1 2 3 4 5 6 7 8 9,latent,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-latent_p-tight_s-03,3,none,0.0,mixed,1 2 3 4 5 6 7 8 9,latent,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-latent_p-tight_s-04,4,none,0.0,mixed,1 2 3 4 5 6 7 8 9,latent,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-latent_p-tight_s-05,5,none,0.0,mixed,1 2 3 4 5 6 7 8 9,latent,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-latent_p-moderate_s-00,0,none,0.0,mixed,1 2 3 4 5 6 7 8 9,latent,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-latent_p-moderate_s-01,1,none,0.0,mixed,1 2 3 4 5 6 7 8 9,latent,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-latent_p-moderate_s-02,2,none,0.0,mixed,1 2 3 4 5 6 7 8 9,latent,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-latent_p-moderate_s-03,3,none,0.0,mixed,1 2 3 4 5 6 7 8 9,latent,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-latent_p-moderate_s-04,4,none,0.0,mixed,1 2 3 4 5 6 7 8 9,latent,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-latent_p-moderate_s-05,5,none,0.0,mixed,1 2 3 4 5 6 7 8 9,latent,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-latent_p-wide_s-00,0,none,0.0,mixed,1 2 3 4 5 6 7 8 9,latent,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-latent_p-wide_s-01,1,none,0.0,mixed,1 2 3 4 5 6 7 8 9,latent,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-latent_p-wide_s-02,2,none,0.0,mixed,1 2 3 4 5 6 7 8 9,latent,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-latent_p-wide_s-03,3,none,0.0,mixed,1 2 3 4 5 6 7 8 9,latent,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-latent_p-wide_s-04,4,none,0.0,mixed,1 2 3 4 5 6 7 8 9,latent,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-mixed_a-latent_p-wide_s-05,5,none,0.0,mixed,1 2 3 4 5 6 7 8 9,latent,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-concrete_p-tight_s-00,0,none,0.0,hard,1 2 3,concrete,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-concrete_p-tight_s-01,1,none,0.0,hard,1 2 3,concrete,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-concrete_p-tight_s-02,2,none,0.0,hard,1 2 3,concrete,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-concrete_p-tight_s-03,3,none,0.0,hard,1 2 3,concrete,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-concrete_p-tight_s-04,4,none,0.0,hard,1 2 3,concrete,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-concrete_p-tight_s-05,5,none,0.0,hard,1 2 3,concrete,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-concrete_p-moderate_s-00,0,none,0.0,hard,1 2 3,concrete,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-concrete_p-moderate_s-01,1,none,0.0,hard,1 2 3,concrete,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-concrete_p-moderate_s-02,2,none,0.0,hard,1 2 3,concrete,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-concrete_p-moderate_s-03,3,none,0.0,hard,1 2 3,concrete,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-concrete_p-moderate_s-04,4,none,0.0,hard,1 2 3,concrete,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-concrete_p-moderate_s-05,5,none,0.0,hard,1 2 3,concrete,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-concrete_p-wide_s-00,0,none,0.0,hard,1 2 3,concrete,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-concrete_p-wide_s-01,1,none,0.0,hard,1 2 3,concrete,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-concrete_p-wide_s-02,2,none,0.0,hard,1 2 3,concrete,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-concrete_p-wide_s-03,3,none,0.0,hard,1 2 3,concrete,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-concrete_p-wide_s-04,4,none,0.0,hard,1 2 3,concrete,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-concrete_p-wide_s-05,5,none,0.0,hard,1 2 3,concrete,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-invariant_p-tight_s-00,0,none,0.0,hard,1 2 3,invariant,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-invariant_p-tight_s-01,1,none,0.0,hard,1 2 3,invariant,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-invariant_p-tight_s-02,2,none,0.0,hard,1 2 3,invariant,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-invariant_p-tight_s-03,3,none,0.0,hard,1 2 3,invariant,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-invariant_p-tight_s-04,4,none,0.0,hard,1 2 3,invariant,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-invariant_p-tight_s-05,5,none,0.0,hard,1 2 3,invariant,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-invariant_p-moderate_s-00,0,none,0.0,hard,1 2 3,invariant,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-invariant_p-moderate_s-01,1,none,0.0,hard,1 2 3,invariant,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-invariant_p-moderate_s-02,2,none,0.0,hard,1 2 3,invariant,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-invariant_p-moderate_s-03,3,none,0.0,hard,1 2 3,invariant,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-invariant_p-moderate_s-04,4,none,0.0,hard,1 2 3,invariant,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-invariant_p-moderate_s-05,5,none,0.0,hard,1 2 3,invariant,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-invariant_p-wide_s-00,0,none,0.0,hard,1 2 3,invariant,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-invariant_p-wide_s-01,1,none,0.0,hard,1 2 3,invariant,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-invariant_p-wide_s-02,2,none,0.0,hard,1 2 3,invariant,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-invariant_p-wide_s-03,3,none,0.0,hard,1 2 3,invariant,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-invariant_p-wide_s-04,4,none,0.0,hard,1 2 3,invariant,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-invariant_p-wide_s-05,5,none,0.0,hard,1 2 3,invariant,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-latent_p-tight_s-00,0,none,0.0,hard,1 2 3,latent,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-latent_p-tight_s-01,1,none,0.0,hard,1 2 3,latent,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-latent_p-tight_s-02,2,none,0.0,hard,1 2 3,latent,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-latent_p-tight_s-03,3,none,0.0,hard,1 2 3,latent,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-latent_p-tight_s-04,4,none,0.0,hard,1 2 3,latent,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-latent_p-tight_s-05,5,none,0.0,hard,1 2 3,latent,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-latent_p-moderate_s-00,0,none,0.0,hard,1 2 3,latent,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-latent_p-moderate_s-01,1,none,0.0,hard,1 2 3,latent,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-latent_p-moderate_s-02,2,none,0.0,hard,1 2 3,latent,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-latent_p-moderate_s-03,3,none,0.0,hard,1 2 3,latent,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-latent_p-moderate_s-04,4,none,0.0,hard,1 2 3,latent,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-latent_p-moderate_s-05,5,none,0.0,hard,1 2 3,latent,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-latent_p-wide_s-00,0,none,0.0,hard,1 2 3,latent,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-latent_p-wide_s-01,1,none,0.0,hard,1 2 3,latent,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-latent_p-wide_s-02,2,none,0.0,hard,1 2 3,latent,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-latent_p-wide_s-03,3,none,0.0,hard,1 2 3,latent,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-latent_p-wide_s-04,4,none,0.0,hard,1 2 3,latent,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-none_d-hard_a-latent_p-wide_s-05,5,none,0.0,hard,1 2 3,latent,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-concrete_p-tight_s-00,0,high,0.01,easy,5 6 7 8 9,concrete,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-concrete_p-tight_s-01,1,high,0.01,easy,5 6 7 8 9,concrete,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-concrete_p-tight_s-02,2,high,0.01,easy,5 6 7 8 9,concrete,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-concrete_p-tight_s-03,3,high,0.01,easy,5 6 7 8 9,concrete,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-concrete_p-tight_s-04,4,high,0.01,easy,5 6 7 8 9,concrete,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-concrete_p-tight_s-05,5,high,0.01,easy,5 6 7 8 9,concrete,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-concrete_p-moderate_s-00,0,high,0.01,easy,5 6 7 8 9,concrete,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-concrete_p-moderate_s-01,1,high,0.01,easy,5 6 7 8 9,concrete,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-concrete_p-moderate_s-02,2,high,0.01,easy,5 6 7 8 9,concrete,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-concrete_p-moderate_s-03,3,high,0.01,easy,5 6 7 8 9,concrete,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-concrete_p-moderate_s-04,4,high,0.01,easy,5 6 7 8 9,concrete,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-concrete_p-moderate_s-05,5,high,0.01,easy,5 6 7 8 9,concrete,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-concrete_p-wide_s-00,0,high,0.01,easy,5 6 7 8 9,concrete,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-concrete_p-wide_s-01,1,high,0.01,easy,5 6 7 8 9,concrete,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-concrete_p-wide_s-02,2,high,0.01,easy,5 6 7 8 9,concrete,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-concrete_p-wide_s-03,3,high,0.01,easy,5 6 7 8 9,concrete,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-concrete_p-wide_s-04,4,high,0.01,easy,5 6 7 8 9,concrete,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-concrete_p-wide_s-05,5,high,0.01,easy,5 6 7 8 9,concrete,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-invariant_p-tight_s-00,0,high,0.01,easy,5 6 7 8 9,invariant,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-invariant_p-tight_s-01,1,high,0.01,easy,5 6 7 8 9,invariant,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-invariant_p-tight_s-02,2,high,0.01,easy,5 6 7 8 9,invariant,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-invariant_p-tight_s-03,3,high,0.01,easy,5 6 7 8 9,invariant,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-invariant_p-tight_s-04,4,high,0.01,easy,5 6 7 8 9,invariant,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-invariant_p-tight_s-05,5,high,0.01,easy,5 6 7 8 9,invariant,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-invariant_p-moderate_s-00,0,high,0.01,easy,5 6 7 8 9,invariant,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-invariant_p-moderate_s-01,1,high,0.01,easy,5 6 7 8 9,invariant,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-invariant_p-moderate_s-02,2,high,0.01,easy,5 6 7 8 9,invariant,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-invariant_p-moderate_s-03,3,high,0.01,easy,5 6 7 8 9,invariant,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-invariant_p-moderate_s-04,4,high,0.01,easy,5 6 7 8 9,invariant,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-invariant_p-moderate_s-05,5,high,0.01,easy,5 6 7 8 9,invariant,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-invariant_p-wide_s-00,0,high,0.01,easy,5 6 7 8 9,invariant,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-invariant_p-wide_s-01,1,high,0.01,easy,5 6 7 8 9,invariant,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-invariant_p-wide_s-02,2,high,0.01,easy,5 6 7 8 9,invariant,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-invariant_p-wide_s-03,3,high,0.01,easy,5 6 7 8 9,invariant,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-invariant_p-wide_s-04,4,high,0.01,easy,5 6 7 8 9,invariant,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-invariant_p-wide_s-05,5,high,0.01,easy,5 6 7 8 9,invariant,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-latent_p-tight_s-00,0,high,0.01,easy,5 6 7 8 9,latent,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-latent_p-tight_s-01,1,high,0.01,easy,5 6 7 8 9,latent,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-latent_p-tight_s-02,2,high,0.01,easy,5 6 7 8 9,latent,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-latent_p-tight_s-03,3,high,0.01,easy,5 6 7 8 9,latent,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-latent_p-tight_s-04,4,high,0.01,easy,5 6 7 8 9,latent,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-latent_p-tight_s-05,5,high,0.01,easy,5 6 7 8 9,latent,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-latent_p-moderate_s-00,0,high,0.01,easy,5 6 7 8 9,latent,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-latent_p-moderate_s-01,1,high,0.01,easy,5 6 7 8 9,latent,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-latent_p-moderate_s-02,2,high,0.01,easy,5 6 7 8 9,latent,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-latent_p-moderate_s-03,3,high,0.01,easy,5 6 7 8 9,latent,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-latent_p-moderate_s-04,4,high,0.01,easy,5 6 7 8 9,latent,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-latent_p-moderate_s-05,5,high,0.01,easy,5 6 7 8 9,latent,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-latent_p-wide_s-00,0,high,0.01,easy,5 6 7 8 9,latent,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-latent_p-wide_s-01,1,high,0.01,easy,5 6 7 8 9,latent,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-latent_p-wide_s-02,2,high,0.01,easy,5 6 7 8 9,latent,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-latent_p-wide_s-03,3,high,0.01,easy,5 6 7 8 9,latent,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-latent_p-wide_s-04,4,high,0.01,easy,5 6 7 8 9,latent,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-easy_a-latent_p-wide_s-05,5,high,0.01,easy,5 6 7 8 9,latent,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-concrete_p-tight_s-00,0,high,0.01,mixed,1 2 3 4 5 6 7 8 9,concrete,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-concrete_p-tight_s-01,1,high,0.01,mixed,1 2 3 4 5 6 7 8 9,concrete,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-concrete_p-tight_s-02,2,high,0.01,mixed,1 2 3 4 5 6 7 8 9,concrete,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-concrete_p-tight_s-03,3,high,0.01,mixed,1 2 3 4 5 6 7 8 9,concrete,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-concrete_p-tight_s-04,4,high,0.01,mixed,1 2 3 4 5 6 7 8 9,concrete,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-concrete_p-tight_s-05,5,high,0.01,mixed,1 2 3 4 5 6 7 8 9,concrete,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-concrete_p-moderate_s-00,0,high,0.01,mixed,1 2 3 4 5 6 7 8 9,concrete,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-concrete_p-moderate_s-01,1,high,0.01,mixed,1 2 3 4 5 6 7 8 9,concrete,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-concrete_p-moderate_s-02,2,high,0.01,mixed,1 2 3 4 5 6 7 8 9,concrete,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-concrete_p-moderate_s-03,3,high,0.01,mixed,1 2 3 4 5 6 7 8 9,concrete,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-concrete_p-moderate_s-04,4,high,0.01,mixed,1 2 3 4 5 6 7 8 9,concrete,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-concrete_p-moderate_s-05,5,high,0.01,mixed,1 2 3 4 5 6 7 8 9,concrete,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-concrete_p-wide_s-00,0,high,0.01,mixed,1 2 3 4 5 6 7 8 9,concrete,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-concrete_p-wide_s-01,1,high,0.01,mixed,1 2 3 4 5 6 7 8 9,concrete,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-concrete_p-wide_s-02,2,high,0.01,mixed,1 2 3 4 5 6 7 8 9,concrete,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-concrete_p-wide_s-03,3,high,0.01,mixed,1 2 3 4 5 6 7 8 9,concrete,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-concrete_p-wide_s-04,4,high,0.01,mixed,1 2 3 4 5 6 7 8 9,concrete,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-concrete_p-wide_s-05,5,high,0.01,mixed,1 2 3 4 5 6 7 8 9,concrete,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-invariant_p-tight_s-00,0,high,0.01,mixed,1 2 3 4 5 6 7 8 9,invariant,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-invariant_p-tight_s-01,1,high,0.01,mixed,1 2 3 4 5 6 7 8 9,invariant,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-invariant_p-tight_s-02,2,high,0.01,mixed,1 2 3 4 5 6 7 8 9,invariant,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-invariant_p-tight_s-03,3,high,0.01,mixed,1 2 3 4 5 6 7 8 9,invariant,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-invariant_p-tight_s-04,4,high,0.01,mixed,1 2 3 4 5 6 7 8 9,invariant,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-invariant_p-tight_s-05,5,high,0.01,mixed,1 2 3 4 5 6 7 8 9,invariant,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-invariant_p-moderate_s-00,0,high,0.01,mixed,1 2 3 4 5 6 7 8 9,invariant,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-invariant_p-moderate_s-01,1,high,0.01,mixed,1 2 3 4 5 6 7 8 9,invariant,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-invariant_p-moderate_s-02,2,high,0.01,mixed,1 2 3 4 5 6 7 8 9,invariant,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-invariant_p-moderate_s-03,3,high,0.01,mixed,1 2 3 4 5 6 7 8 9,invariant,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-invariant_p-moderate_s-04,4,high,0.01,mixed,1 2 3 4 5 6 7 8 9,invariant,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-invariant_p-moderate_s-05,5,high,0.01,mixed,1 2 3 4 5 6 7 8 9,invariant,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-invariant_p-wide_s-00,0,high,0.01,mixed,1 2 3 4 5 6 7 8 9,invariant,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-invariant_p-wide_s-01,1,high,0.01,mixed,1 2 3 4 5 6 7 8 9,invariant,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-invariant_p-wide_s-02,2,high,0.01,mixed,1 2 3 4 5 6 7 8 9,invariant,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-invariant_p-wide_s-03,3,high,0.01,mixed,1 2 3 4 5 6 7 8 9,invariant,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-invariant_p-wide_s-04,4,high,0.01,mixed,1 2 3 4 5 6 7 8 9,invariant,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-invariant_p-wide_s-05,5,high,0.01,mixed,1 2 3 4 5 6 7 8 9,invariant,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-latent_p-tight_s-00,0,high,0.01,mixed,1 2 3 4 5 6 7 8 9,latent,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-latent_p-tight_s-01,1,high,0.01,mixed,1 2 3 4 5 6 7 8 9,latent,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-latent_p-tight_s-02,2,high,0.01,mixed,1 2 3 4 5 6 7 8 9,latent,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-latent_p-tight_s-03,3,high,0.01,mixed,1 2 3 4 5 6 7 8 9,latent,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-latent_p-tight_s-04,4,high,0.01,mixed,1 2 3 4 5 6 7 8 9,latent,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-latent_p-tight_s-05,5,high,0.01,mixed,1 2 3 4 5 6 7 8 9,latent,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-latent_p-moderate_s-00,0,high,0.01,mixed,1 2 3 4 5 6 7 8 9,latent,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-latent_p-moderate_s-01,1,high,0.01,mixed,1 2 3 4 5 6 7 8 9,latent,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-latent_p-moderate_s-02,2,high,0.01,mixed,1 2 3 4 5 6 7 8 9,latent,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-latent_p-moderate_s-03,3,high,0.01,mixed,1 2 3 4 5 6 7 8 9,latent,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-latent_p-moderate_s-04,4,high,0.01,mixed,1 2 3 4 5 6 7 8 9,latent,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-latent_p-moderate_s-05,5,high,0.01,mixed,1 2 3 4 5 6 7 8 9,latent,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-latent_p-wide_s-00,0,high,0.01,mixed,1 2 3 4 5 6 7 8 9,latent,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-latent_p-wide_s-01,1,high,0.01,mixed,1 2 3 4 5 6 7 8 9,latent,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-latent_p-wide_s-02,2,high,0.01,mixed,1 2 3 4 5 6 7 8 9,latent,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-latent_p-wide_s-03,3,high,0.01,mixed,1 2 3 4 5 6 7 8 9,latent,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-latent_p-wide_s-04,4,high,0.01,mixed,1 2 3 4 5 6 7 8 9,latent,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-mixed_a-latent_p-wide_s-05,5,high,0.01,mixed,1 2 3 4 5 6 7 8 9,latent,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-concrete_p-tight_s-00,0,high,0.01,hard,1 2 3,concrete,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-concrete_p-tight_s-01,1,high,0.01,hard,1 2 3,concrete,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-concrete_p-tight_s-02,2,high,0.01,hard,1 2 3,concrete,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-concrete_p-tight_s-03,3,high,0.01,hard,1 2 3,concrete,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-concrete_p-tight_s-04,4,high,0.01,hard,1 2 3,concrete,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-concrete_p-tight_s-05,5,high,0.01,hard,1 2 3,concrete,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-concrete_p-moderate_s-00,0,high,0.01,hard,1 2 3,concrete,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-concrete_p-moderate_s-01,1,high,0.01,hard,1 2 3,concrete,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-concrete_p-moderate_s-02,2,high,0.01,hard,1 2 3,concrete,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-concrete_p-moderate_s-03,3,high,0.01,hard,1 2 3,concrete,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-concrete_p-moderate_s-04,4,high,0.01,hard,1 2 3,concrete,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-concrete_p-moderate_s-05,5,high,0.01,hard,1 2 3,concrete,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-concrete_p-wide_s-00,0,high,0.01,hard,1 2 3,concrete,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-concrete_p-wide_s-01,1,high,0.01,hard,1 2 3,concrete,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-concrete_p-wide_s-02,2,high,0.01,hard,1 2 3,concrete,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-concrete_p-wide_s-03,3,high,0.01,hard,1 2 3,concrete,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-concrete_p-wide_s-04,4,high,0.01,hard,1 2 3,concrete,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-concrete_p-wide_s-05,5,high,0.01,hard,1 2 3,concrete,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-invariant_p-tight_s-00,0,high,0.01,hard,1 2 3,invariant,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-invariant_p-tight_s-01,1,high,0.01,hard,1 2 3,invariant,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-invariant_p-tight_s-02,2,high,0.01,hard,1 2 3,invariant,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-invariant_p-tight_s-03,3,high,0.01,hard,1 2 3,invariant,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-invariant_p-tight_s-04,4,high,0.01,hard,1 2 3,invariant,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-invariant_p-tight_s-05,5,high,0.01,hard,1 2 3,invariant,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-invariant_p-moderate_s-00,0,high,0.01,hard,1 2 3,invariant,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-invariant_p-moderate_s-01,1,high,0.01,hard,1 2 3,invariant,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-invariant_p-moderate_s-02,2,high,0.01,hard,1 2 3,invariant,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-invariant_p-moderate_s-03,3,high,0.01,hard,1 2 3,invariant,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-invariant_p-moderate_s-04,4,high,0.01,hard,1 2 3,invariant,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-invariant_p-moderate_s-05,5,high,0.01,hard,1 2 3,invariant,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-invariant_p-wide_s-00,0,high,0.01,hard,1 2 3,invariant,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-invariant_p-wide_s-01,1,high,0.01,hard,1 2 3,invariant,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-invariant_p-wide_s-02,2,high,0.01,hard,1 2 3,invariant,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-invariant_p-wide_s-03,3,high,0.01,hard,1 2 3,invariant,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-invariant_p-wide_s-04,4,high,0.01,hard,1 2 3,invariant,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-invariant_p-wide_s-05,5,high,0.01,hard,1 2 3,invariant,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-latent_p-tight_s-00,0,high,0.01,hard,1 2 3,latent,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-latent_p-tight_s-01,1,high,0.01,hard,1 2 3,latent,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-latent_p-tight_s-02,2,high,0.01,hard,1 2 3,latent,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-latent_p-tight_s-03,3,high,0.01,hard,1 2 3,latent,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-latent_p-tight_s-04,4,high,0.01,hard,1 2 3,latent,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-latent_p-tight_s-05,5,high,0.01,hard,1 2 3,latent,tight,transformer,32,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-latent_p-moderate_s-00,0,high,0.01,hard,1 2 3,latent,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-latent_p-moderate_s-01,1,high,0.01,hard,1 2 3,latent,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-latent_p-moderate_s-02,2,high,0.01,hard,1 2 3,latent,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-latent_p-moderate_s-03,3,high,0.01,hard,1 2 3,latent,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-latent_p-moderate_s-04,4,high,0.01,hard,1 2 3,latent,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-latent_p-moderate_s-05,5,high,0.01,hard,1 2 3,latent,moderate,transformer,64,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-latent_p-wide_s-00,0,high,0.01,hard,1 2 3,latent,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-latent_p-wide_s-01,1,high,0.01,hard,1 2 3,latent,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-latent_p-wide_s-02,2,high,0.01,hard,1 2 3,latent,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-latent_p-wide_s-03,3,high,0.01,hard,1 2 3,latent,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-latent_p-wide_s-04,4,high,0.01,hard,1 2 3,latent,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
+v2_c-high_d-hard_a-latent_p-wide_s-05,5,high,0.01,hard,1 2 3,latent,wide,transformer,128,2,256,10000,0.001,1.0,0.1,1.0,1.0
