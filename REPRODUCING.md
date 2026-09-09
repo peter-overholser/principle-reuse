@@ -1,4 +1,4 @@
-# Reproducing the V2 experiment
+# Reproducing the released experiments
 
 ## 1. Environment
 
@@ -107,5 +107,57 @@ measurements remain missing rather than being converted to zero.
 shasum -a 256 -c CHECKSUMS.sha256
 ```
 
-The checksum file covers the manifest, protocol, pre-unlock report, summary
-outputs, analysis code, and both raw-result directories.
+The checksum file covers both experiments' manifests, protocols, frozen and
+locked reports, summary outputs, analysis code, figures, and four raw-result
+directories.
+
+## 9. Reproduce Task 2
+
+Task 2 uses the composed rule `a - b > c - d`. Its registered grid contains
+162 configurations: three objectives by three difficulty regimes by three
+widths by six paired seeds, with weight decay fixed at zero.
+
+Validate the generator and regenerate the manifest:
+
+```bash
+python -m experiments.training_axes.task_differences
+python -m experiments.training_axes.design_task2 \
+  --out /tmp/task2_manifest_regenerated.csv
+cmp /tmp/task2_manifest_regenerated.csv \
+  experiments/training_axes/task2_manifest.csv
+```
+
+Train without touching the locked splits:
+
+```bash
+python -m experiments.training_axes.run_manifest \
+  experiments/training_axes/task2_manifest.csv \
+  --device cuda --jobs 2 --execute \
+  --results-dir experiments/training_axes/results_task2 \
+  --checkpoints-dir experiments/training_axes/checkpoints_task2
+```
+
+Before evaluating locked data, reproduce and freeze the development analysis:
+
+```bash
+python -m experiments.training_axes.analyze_preunlock_task2
+```
+
+The released freeze is recorded in `TASK2_PREUNLOCK_FREEZE.md`. A new
+replication should create its own freeze before proceeding. Then evaluate the
+three locked splits once and reproduce the confirmatory analysis:
+
+```bash
+python -m experiments.training_axes.evaluate_all_locked \
+  experiments/training_axes/checkpoints_task2 \
+  --out-dir experiments/training_axes/locked_results_task2 \
+  --device cuda --jobs 2
+
+python -m experiments.training_axes.analyze_locked_task2
+python -m experiments.training_axes.plot_cross_task
+```
+
+`analyze_locked_task2.py` refuses to run unless all 162 development and locked
+files have eleven registered checkpoints, all identifiers join one-to-one, and
+the manifest, protocol, development-result tree, pre-unlock analysis, frozen
+contrasts, and pre-unlock report still match their recorded SHA-256 digests.

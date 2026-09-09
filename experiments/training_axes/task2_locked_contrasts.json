@@ -1,0 +1,873 @@
+{
+  "endpoint": {
+    "held_pair": {
+      "invariant_minus_concrete_accuracy": {
+        "bootstrap_high": 0.002194444444444439,
+        "bootstrap_low": -0.003222222222222206,
+        "control": "concrete",
+        "mean": -0.00020370370370369987,
+        "outcome": "held_pair_accuracy",
+        "seed_values": [
+          0.00044444444444444485,
+          0.0012777777777777974,
+          0.00216666666666665,
+          -0.0014999999999999953,
+          -0.007166666666666642,
+          0.003555555555555546
+        ],
+        "subset": {},
+        "t_high": 0.0037932219747074686,
+        "t_low": -0.004200629382114868,
+        "treatment": "invariant"
+      },
+      "latent_minus_concrete_accuracy": {
+        "bootstrap_high": 0.032703703703703714,
+        "bootstrap_low": 0.012666666666666668,
+        "control": "concrete",
+        "mean": 0.02206481481481482,
+        "outcome": "held_pair_accuracy",
+        "seed_values": [
+          0.008222222222222218,
+          0.01100000000000001,
+          0.022944444444444448,
+          0.03088888888888888,
+          0.044722222222222247,
+          0.014611111111111106
+        ],
+        "subset": {},
+        "t_high": 0.036618344510421744,
+        "t_low": 0.007511285119207891,
+        "treatment": "latent"
+      },
+      "latent_minus_concrete_brier_skill": {
+        "bootstrap_high": 0.12917874146390843,
+        "bootstrap_low": 0.05161590929384585,
+        "control": "concrete",
+        "mean": 0.08763924296255465,
+        "outcome": "held_pair_brier_skill",
+        "seed_values": [
+          0.03705635997984144,
+          0.04169362121158176,
+          0.08852248721652561,
+          0.11977639463212755,
+          0.1769566701518165,
+          0.06182992458343506
+        ],
+        "subset": {},
+        "t_high": 0.14385399184072178,
+        "t_low": 0.031424494084387536,
+        "treatment": "latent"
+      }
+    },
+    "test_both": {
+      "invariant_minus_concrete_accuracy": {
+        "bootstrap_high": 0.07664814814814813,
+        "bootstrap_low": -0.08350000000000002,
+        "control": "concrete",
+        "mean": -0.00939814814814816,
+        "outcome": "test_both_accuracy",
+        "seed_values": [
+          -0.07911111111111115,
+          -0.10094444444444445,
+          0.1681111111111111,
+          0.013444444444444432,
+          -0.11672222222222223,
+          0.05883333333333332
+        ],
+        "subset": {},
+        "t_high": 0.1069387243503312,
+        "t_low": -0.1257350206466275,
+        "treatment": "invariant"
+      },
+      "latent_minus_concrete_accuracy": {
+        "bootstrap_high": 0.5331944444444444,
+        "bootstrap_low": 0.4025925925925926,
+        "control": "concrete",
+        "mean": 0.4681018518518519,
+        "outcome": "test_both_accuracy",
+        "seed_values": [
+          0.41044444444444445,
+          0.4689444444444444,
+          0.5987777777777777,
+          0.3373333333333333,
+          0.46494444444444444,
+          0.5281666666666668
+        ],
+        "subset": {},
+        "t_high": 0.5632706110806194,
+        "t_low": 0.37293309262308444,
+        "treatment": "latent"
+      },
+      "latent_minus_concrete_brier_skill": {
+        "bootstrap_high": 2.107149152085185,
+        "bootstrap_low": 1.5882724320722952,
+        "control": "concrete",
+        "mean": 1.8492834245855059,
+        "outcome": "test_both_brier_skill",
+        "seed_values": [
+          1.6432940926816728,
+          1.8382150944736269,
+          2.376083209696743,
+          1.324116174545553,
+          1.8336176350712776,
+          2.080374341044161
+        ],
+        "subset": {},
+        "t_high": 2.2275234385607585,
+        "t_low": 1.4710434106102532,
+        "treatment": "latent"
+      }
+    },
+    "test_combo": {
+      "invariant_minus_concrete_accuracy": {
+        "bootstrap_high": 0.07668518518518518,
+        "bootstrap_low": -0.08471296296296295,
+        "control": "concrete",
+        "mean": -0.009666666666666672,
+        "outcome": "test_combo_accuracy",
+        "seed_values": [
+          -0.07405555555555557,
+          -0.10483333333333333,
+          0.1696111111111111,
+          0.005777777777777789,
+          -0.11516666666666667,
+          0.06066666666666665
+        ],
+        "subset": {},
+        "t_high": 0.10687145179734363,
+        "t_low": -0.12620478513067698,
+        "treatment": "invariant"
+      },
+      "latent_minus_concrete_accuracy": {
+        "bootstrap_high": 0.5327777777777778,
+        "bootstrap_low": 0.3992037037037037,
+        "control": "concrete",
+        "mean": 0.4668333333333334,
+        "outcome": "test_combo_accuracy",
+        "seed_values": [
+          0.40772222222222226,
+          0.4585,
+          0.5925,
+          0.3308333333333333,
+          0.4749444444444444,
+          0.5365
+        ],
+        "subset": {},
+        "t_high": 0.5638944023885006,
+        "t_low": 0.3697722642781662,
+        "treatment": "latent"
+      },
+      "latent_minus_concrete_brier_skill": {
+        "bootstrap_high": 2.10835317991398,
+        "bootstrap_low": 1.57410576282483,
+        "control": "concrete",
+        "mean": 1.8433548320188289,
+        "outcome": "test_combo_brier_skill",
+        "seed_values": [
+          1.6259586612383525,
+          1.7993960115644667,
+          2.349550439251794,
+          1.3002503593969676,
+          1.8722437435968056,
+          2.1127297770645885
+        ],
+        "subset": {},
+        "t_high": 2.228595598372769,
+        "t_low": 1.4581140656648888,
+        "treatment": "latent"
+      }
+    }
+  },
+  "factor_conditioned": {
+    "capacity": {
+      "moderate": {
+        "bootstrap_high": 0.49766666666666665,
+        "bootstrap_low": 0.35152777777777783,
+        "control": "concrete",
+        "mean": 0.4317777777777778,
+        "outcome": "test_combo_accuracy",
+        "seed_values": [
+          0.4275,
+          0.5529999999999999,
+          0.4611666666666667,
+          0.24950000000000003,
+          0.422,
+          0.47750000000000004
+        ],
+        "subset": {
+          "capacity": "moderate"
+        },
+        "t_high": 0.5377532661251618,
+        "t_low": 0.32580228943039385,
+        "treatment": "latent"
+      },
+      "tight": {
+        "bootstrap_high": 0.7210555555555556,
+        "bootstrap_low": 0.5553055555555556,
+        "control": "concrete",
+        "mean": 0.6467222222222223,
+        "outcome": "test_combo_accuracy",
+        "seed_values": [
+          0.7203333333333332,
+          0.6886666666666666,
+          0.592,
+          0.6828333333333334,
+          0.7600000000000001,
+          0.43649999999999994
+        ],
+        "subset": {
+          "capacity": "tight"
+        },
+        "t_high": 0.7695570421481432,
+        "t_low": 0.5238874022963014,
+        "treatment": "latent"
+      },
+      "wide": {
+        "bootstrap_high": 0.5408611111111111,
+        "bootstrap_low": 0.10794444444444447,
+        "control": "concrete",
+        "mean": 0.322,
+        "outcome": "test_combo_accuracy",
+        "seed_values": [
+          0.07533333333333332,
+          0.13383333333333333,
+          0.7243333333333334,
+          0.0601666666666667,
+          0.24283333333333337,
+          0.6955
+        ],
+        "subset": {
+          "capacity": "wide"
+        },
+        "t_high": 0.6445882387650289,
+        "t_low": -0.0005882387650288923,
+        "treatment": "latent"
+      }
+    },
+    "difficulty": {
+      "easy": {
+        "bootstrap_high": 0.5859444444444445,
+        "bootstrap_low": 0.41972222222222216,
+        "control": "concrete",
+        "mean": 0.5146111111111111,
+        "outcome": "test_combo_accuracy",
+        "seed_values": [
+          0.6405,
+          0.5626666666666665,
+          0.5591666666666667,
+          0.29383333333333334,
+          0.5165000000000001,
+          0.515
+        ],
+        "subset": {
+          "difficulty": "easy"
+        },
+        "t_high": 0.6377927673657668,
+        "t_low": 0.39142945485645547,
+        "treatment": "latent"
+      },
+      "hard": {
+        "bootstrap_high": 0.5027222222222222,
+        "bootstrap_low": 0.21372222222222226,
+        "control": "concrete",
+        "mean": 0.3653611111111111,
+        "outcome": "test_combo_accuracy",
+        "seed_values": [
+          0.07233333333333336,
+          0.5406666666666666,
+          0.4366666666666667,
+          0.38400000000000006,
+          0.5736666666666667,
+          0.18483333333333332
+        ],
+        "subset": {
+          "difficulty": "hard"
+        },
+        "t_high": 0.5742018039788311,
+        "t_low": 0.15652041824339102,
+        "treatment": "latent"
+      },
+      "mixed": {
+        "bootstrap_high": 0.7226111111111112,
+        "bootstrap_low": 0.3364444444444444,
+        "control": "concrete",
+        "mean": 0.5205277777777778,
+        "outcome": "test_combo_accuracy",
+        "seed_values": [
+          0.5103333333333333,
+          0.27216666666666667,
+          0.7816666666666667,
+          0.3146666666666667,
+          0.33466666666666667,
+          0.9096666666666667
+        ],
+        "subset": {
+          "difficulty": "mixed"
+        },
+        "t_high": 0.8014681519398861,
+        "t_low": 0.23958740361566955,
+        "treatment": "latent"
+      }
+    }
+  },
+  "integrity": {
+    "development_files": 162,
+    "development_rows": 1782,
+    "final_step": 10000,
+    "freeze_hashes": {
+      "development_tree": "504a8503f2ee5c8297474f1181dae848f61e0cd0a0bdb0ba3d897e1525f04e7a",
+      "manifest": "8bed6bf9ebf1a5779d60c348f79b90997b450305cc36de2226b6009c043feaec",
+      "preunlock_analysis": "83f1e72574b7e03ada27c31d2d700075d7ec4af8aa9d2436b29b0847d6763208",
+      "preunlock_contrasts": "59507134dfc74a8b98c0c4e21a65cd0cc412d790c11298c7cdfeb5c70afd7c84",
+      "preunlock_report": "d78794da6d5f2c742b7d0ca926f3506334d7e25ed692a986a6eb74038615e310",
+      "protocol": "c20c9e671c453183a3a8da79b6970ff98507c55972759a4706a096871d444f4f"
+    },
+    "locked_files": 162,
+    "locked_rows": 1782,
+    "locked_tree_sha256": "5c91ccf8f76fc75510f2cb5b77fa52c77cc50f5501190d0a7326d3494bdf24ba",
+    "manifest_runs": 162,
+    "rows_per_run": 11
+  },
+  "locked_minus_development": {
+    "bootstrap_high": 0.02303703703703705,
+    "bootstrap_low": -0.04457407407407408,
+    "control": "concrete",
+    "mean": -0.005962962962962957,
+    "outcome": "test_combo_minus_calib_accuracy",
+    "seed_values": [
+      0.010722222222222185,
+      -0.09561111111111112,
+      0.02683333333333334,
+      -0.018166666666666623,
+      0.0040555555555555865,
+      0.03638888888888889
+    ],
+    "subset": {},
+    "t_high": 0.04422105235324537,
+    "t_low": -0.05614697827917128,
+    "treatment": "latent"
+  },
+  "mastery_matched": {
+    "held_pair": {
+      "latent_minus_concrete_accuracy": {
+        "bootstrap_high": 0.02102777777777778,
+        "bootstrap_low": -0.0091388888888889,
+        "control": "concrete",
+        "mean": 0.0037870370370370336,
+        "outcome": "mastery_held_pair_accuracy",
+        "seed_values": [
+          -0.015277777777777786,
+          0.004000000000000016,
+          0.00844444444444444,
+          -0.009055555555555558,
+          0.043000000000000003,
+          -0.008388888888888914
+        ],
+        "subset": {},
+        "t_high": 0.0259797886607528,
+        "t_low": -0.018405714586678733,
+        "treatment": "latent"
+      },
+      "latent_minus_concrete_brier_skill": {
+        "bootstrap_high": 0.07465898162788816,
+        "bootstrap_low": -0.03210488772364679,
+        "control": "concrete",
+        "mean": 0.013486612691647477,
+        "outcome": "mastery_held_pair_brier_skill",
+        "seed_values": [
+          -0.05191081100040012,
+          0.014982501665751139,
+          0.02007714245054457,
+          -0.030774012207984924,
+          0.15493501888381112,
+          -0.026390163641836908
+        ],
+        "subset": {},
+        "t_high": 0.09184974712189001,
+        "t_low": -0.06487652173859504,
+        "treatment": "latent"
+      }
+    },
+    "test_both": {
+      "latent_minus_concrete_accuracy": {
+        "bootstrap_high": 0.14512037037037037,
+        "bootstrap_low": 0.06824999999999999,
+        "control": "concrete",
+        "mean": 0.1079722222222222,
+        "outcome": "mastery_test_both_accuracy",
+        "seed_values": [
+          0.03927777777777777,
+          0.07383333333333333,
+          0.168,
+          0.06466666666666666,
+          0.14888888888888888,
+          0.1531666666666667
+        ],
+        "subset": {},
+        "t_high": 0.1656048869223496,
+        "t_low": 0.05033955752209481,
+        "treatment": "latent"
+      },
+      "latent_minus_concrete_brier_skill": {
+        "bootstrap_high": 0.5591462880924896,
+        "bootstrap_low": 0.280729573495962,
+        "control": "concrete",
+        "mean": 0.4218832934620204,
+        "outcome": "mastery_test_both_brier_skill",
+        "seed_values": [
+          0.19791790925794178,
+          0.24733583132425943,
+          0.6297600881920921,
+          0.23802429934342703,
+          0.6223095821009742,
+          0.5959520505534278
+        ],
+        "subset": {},
+        "t_high": 0.6460378481043778,
+        "t_low": 0.19772873881966302,
+        "treatment": "latent"
+      }
+    },
+    "test_combo": {
+      "latent_minus_concrete_accuracy": {
+        "bootstrap_high": 0.1527314814814815,
+        "bootstrap_low": 0.06824074074074075,
+        "control": "concrete",
+        "mean": 0.1118425925925926,
+        "outcome": "mastery_test_combo_accuracy",
+        "seed_values": [
+          0.035611111111111114,
+          0.06650000000000002,
+          0.17372222222222222,
+          0.07172222222222224,
+          0.15494444444444444,
+          0.16855555555555557
+        ],
+        "subset": {},
+        "t_high": 0.1754699921957706,
+        "t_low": 0.048215192989414596,
+        "treatment": "latent"
+      },
+      "latent_minus_concrete_brier_skill": {
+        "bootstrap_high": 0.576870021617247,
+        "bootstrap_low": 0.26928727111468714,
+        "control": "concrete",
+        "mean": 0.4250944688640259,
+        "outcome": "mastery_test_combo_brier_skill",
+        "seed_values": [
+          0.18443140553103554,
+          0.20140153459376758,
+          0.642656211844749,
+          0.23652679307593238,
+          0.6317208233392901,
+          0.6538300447993808
+        ],
+        "subset": {},
+        "t_high": 0.6760226427594432,
+        "t_low": 0.17416629496860858,
+        "treatment": "latent"
+      }
+    }
+  },
+  "objective_means": {
+    "concrete": {
+      "calib_combo_accuracy": 0.45318518518518514,
+      "calib_combo_brier_skill": -1.1481554393691045,
+      "held_pair_accuracy": 0.9700185185185188,
+      "held_pair_brier_skill": 0.8844428299753754,
+      "source_accuracy": 0.9995555555555556,
+      "source_all_accuracy": 0.9720740740740742,
+      "source_brier_skill": 0.9988060372847097,
+      "test_both_accuracy": 0.449212962962963,
+      "test_both_brier_skill": -1.1670205766266142,
+      "test_combo_accuracy": 0.45225925925925925,
+      "test_combo_brier_skill": -1.1559141860860918
+    },
+    "invariant": {
+      "calib_combo_accuracy": 0.4416666666666667,
+      "calib_combo_brier_skill": -1.1908666326629895,
+      "held_pair_accuracy": 0.9698148148148149,
+      "held_pair_brier_skill": 0.8852179083559248,
+      "source_accuracy": 0.9995740740740738,
+      "source_all_accuracy": 0.9717037037037038,
+      "source_brier_skill": 0.9988043286182262,
+      "test_both_accuracy": 0.4398148148148148,
+      "test_both_brier_skill": -1.198028422340199,
+      "test_combo_accuracy": 0.44259259259259265,
+      "test_combo_brier_skill": -1.1890087946559544
+    },
+    "latent": {
+      "calib_combo_accuracy": 0.9259814814814815,
+      "calib_combo_brier_skill": 0.7180873270112055,
+      "held_pair_accuracy": 0.9920833333333332,
+      "held_pair_brier_skill": 0.97208207293793,
+      "source_accuracy": 0.9999444444444444,
+      "source_all_accuracy": 0.9931851851851852,
+      "source_brier_skill": 0.9998634490701888,
+      "test_both_accuracy": 0.9173148148148149,
+      "test_both_brier_skill": 0.6822628479588915,
+      "test_combo_accuracy": 0.9190925925925925,
+      "test_combo_brier_skill": 0.6874406459327373
+    }
+  },
+  "primary": {
+    "bootstrap_high": 0.5327777777777778,
+    "bootstrap_low": 0.3992037037037037,
+    "control": "concrete",
+    "mean": 0.4668333333333334,
+    "outcome": "test_combo_accuracy",
+    "seed_values": [
+      0.40772222222222226,
+      0.4585,
+      0.5925,
+      0.3308333333333333,
+      0.4749444444444444,
+      0.5365
+    ],
+    "subset": {},
+    "t_high": 0.5638944023885006,
+    "t_low": 0.3697722642781662,
+    "treatment": "latent"
+  },
+  "signed_margin": {
+    "held_pair": {
+      "far": {
+        "bootstrap_high": 0.03190403266972945,
+        "bootstrap_low": 0.001928421530259204,
+        "control": "concrete",
+        "mean": 0.015937836764789295,
+        "outcome": "held_pair_accuracy_far",
+        "seed_values": [
+          -0.002892632295388806,
+          -0.002382167772673132,
+          0.01599455504509104,
+          0.02977709715841416,
+          0.049515058703420115,
+          0.005615109749872387
+        ],
+        "subset": {},
+        "t_high": 0.03752524571505306,
+        "t_low": -0.005649572185474464,
+        "treatment": "latent"
+      },
+      "middle": {
+        "bootstrap_high": 0.009343690194754013,
+        "bootstrap_low": 0.004784419678036698,
+        "control": "concrete",
+        "mean": 0.006923336710570746,
+        "outcome": "held_pair_accuracy_middle",
+        "seed_values": [
+          0.003714961161769676,
+          0.004390408645727793,
+          0.008780817291455585,
+          0.004728132387706838,
+          0.01182033096926712,
+          0.008105369807497455
+        ],
+        "subset": {},
+        "t_high": 0.010253747106915725,
+        "t_low": 0.003592926314225767,
+        "treatment": "latent"
+      },
+      "near": {
+        "bootstrap_high": 0.06123795027904616,
+        "bootstrap_low": 0.054185692541856935,
+        "control": "concrete",
+        "mean": 0.05763571790969052,
+        "outcome": "held_pair_accuracy_near",
+        "seed_values": [
+          0.05205479452054795,
+          0.06484018264840181,
+          0.06057838660578388,
+          0.05844748858447487,
+          0.05722983257229833,
+          0.05266362252663623
+        ],
+        "subset": {},
+        "t_high": 0.06271775590458256,
+        "t_low": 0.05255367991479848,
+        "treatment": "latent"
+      }
+    },
+    "test_both": {
+      "far": {
+        "bootstrap_high": 0.5812210864566886,
+        "bootstrap_low": 0.44318402171805316,
+        "control": "concrete",
+        "mean": 0.5161084794592647,
+        "outcome": "test_both_accuracy_far",
+        "seed_values": [
+          0.4520069808027923,
+          0.5282140779522978,
+          0.6423169616886895,
+          0.3675725089337655,
+          0.5386021773456329,
+          0.5679381700324109
+        ],
+        "subset": {},
+        "t_high": 0.616151511400267,
+        "t_low": 0.41606544751826247,
+        "treatment": "latent"
+      },
+      "middle": {
+        "bootstrap_high": 0.5157750342935529,
+        "bootstrap_low": 0.3520233196159122,
+        "control": "concrete",
+        "mean": 0.4308413351623228,
+        "outcome": "test_both_accuracy_middle",
+        "seed_values": [
+          0.377914951989026,
+          0.41460905349794236,
+          0.6039094650205761,
+          0.2904663923182442,
+          0.36934156378600824,
+          0.5288065843621399
+        ],
+        "subset": {},
+        "t_high": 0.5515052634854904,
+        "t_low": 0.31017740683915523,
+        "treatment": "latent"
+      },
+      "near": {
+        "bootstrap_high": 0.3650169343384683,
+        "bootstrap_low": 0.2708401616956189,
+        "control": "concrete",
+        "mean": 0.3143777996285371,
+        "outcome": "test_both_accuracy_near",
+        "seed_values": [
+          0.27761389708292367,
+          0.28711897738446407,
+          0.4221566699442806,
+          0.2628646345460505,
+          0.26581448705342514,
+          0.37069813176007865
+        ],
+        "subset": {},
+        "t_high": 0.38382299942645176,
+        "t_low": 0.2449325998306225,
+        "treatment": "latent"
+      }
+    },
+    "test_combo": {
+      "far": {
+        "bootstrap_high": 0.5876420975430877,
+        "bootstrap_low": 0.44160954556994164,
+        "control": "concrete",
+        "mean": 0.5180248794110182,
+        "outcome": "test_combo_accuracy_far",
+        "seed_values": [
+          0.4457138021494457,
+          0.5158669713125159,
+          0.6422949987306423,
+          0.36379791825336383,
+          0.5555555555555556,
+          0.584920030464585
+        ],
+        "subset": {},
+        "t_high": 0.6233310052177526,
+        "t_low": 0.4127187536042837,
+        "treatment": "latent"
+      },
+      "middle": {
+        "bootstrap_high": 0.5066797002280873,
+        "bootstrap_low": 0.3517975453459324,
+        "control": "concrete",
+        "mean": 0.4268491365265559,
+        "outcome": "test_combo_accuracy_middle",
+        "seed_values": [
+          0.3880742913000977,
+          0.4167481264255458,
+          0.5871619420006516,
+          0.2834799608993157,
+          0.3695014662756598,
+          0.5161290322580645
+        ],
+        "subset": {},
+        "t_high": 0.5409629847181324,
+        "t_low": 0.3127352883349793,
+        "treatment": "latent"
+      },
+      "near": {
+        "bootstrap_high": 0.36009419824448724,
+        "bootstrap_low": 0.2706058659815885,
+        "control": "concrete",
+        "mean": 0.3119781631342325,
+        "outcome": "test_combo_accuracy_near",
+        "seed_values": [
+          0.2829158638407193,
+          0.2819524727039177,
+          0.4087989723827874,
+          0.2524084778420039,
+          0.27296082209377004,
+          0.37283236994219654
+        ],
+        "subset": {},
+        "t_high": 0.3781751179358741,
+        "t_low": 0.24578120833259087,
+        "treatment": "latent"
+      }
+    }
+  },
+  "stability": {
+    "held_pair": {
+      "negative": 4,
+      "negative_cells": [
+        {
+          "capacity": "wide",
+          "concrete": 0.9885,
+          "difference": -0.07650000000000001,
+          "difficulty": "hard",
+          "latent": 0.912,
+          "seed": 0
+        },
+        {
+          "capacity": "wide",
+          "concrete": 0.9995,
+          "difference": -0.023500000000000076,
+          "difficulty": "hard",
+          "latent": 0.976,
+          "seed": 1
+        },
+        {
+          "capacity": "wide",
+          "concrete": 1.0,
+          "difference": -0.0004999999999999449,
+          "difficulty": "mixed",
+          "latent": 0.9995,
+          "seed": 4
+        },
+        {
+          "capacity": "moderate",
+          "concrete": 1.0,
+          "difference": -0.12250000000000005,
+          "difficulty": "hard",
+          "latent": 0.8775,
+          "seed": 5
+        }
+      ],
+      "positive": 37,
+      "total": 54,
+      "zero": 13
+    },
+    "test_both": {
+      "negative": 4,
+      "negative_cells": [
+        {
+          "capacity": "wide",
+          "concrete": 0.8685,
+          "difference": -0.5210000000000001,
+          "difficulty": "hard",
+          "latent": 0.3475,
+          "seed": 0
+        },
+        {
+          "capacity": "wide",
+          "concrete": 0.8475,
+          "difference": -0.247,
+          "difficulty": "hard",
+          "latent": 0.6005,
+          "seed": 3
+        },
+        {
+          "capacity": "tight",
+          "concrete": 0.9275,
+          "difference": -0.030000000000000027,
+          "difficulty": "easy",
+          "latent": 0.8975,
+          "seed": 5
+        },
+        {
+          "capacity": "moderate",
+          "concrete": 0.9395,
+          "difference": -0.20350000000000001,
+          "difficulty": "hard",
+          "latent": 0.736,
+          "seed": 5
+        }
+      ],
+      "positive": 50,
+      "total": 54,
+      "zero": 0
+    },
+    "test_combo": {
+      "negative": 4,
+      "negative_cells": [
+        {
+          "capacity": "wide",
+          "concrete": 0.8845,
+          "difference": -0.5309999999999999,
+          "difficulty": "hard",
+          "latent": 0.3535,
+          "seed": 0
+        },
+        {
+          "capacity": "wide",
+          "concrete": 0.854,
+          "difference": -0.20999999999999996,
+          "difficulty": "hard",
+          "latent": 0.644,
+          "seed": 3
+        },
+        {
+          "capacity": "tight",
+          "concrete": 0.927,
+          "difference": -0.034500000000000086,
+          "difficulty": "easy",
+          "latent": 0.8925,
+          "seed": 5
+        },
+        {
+          "capacity": "moderate",
+          "concrete": 0.952,
+          "difference": -0.1945,
+          "difficulty": "hard",
+          "latent": 0.7575,
+          "seed": 5
+        }
+      ],
+      "positive": 50,
+      "total": 54,
+      "zero": 0
+    }
+  },
+  "validation_equivalence": {
+    "source_accuracy": {
+      "bootstrap_high": 0.000518518518518519,
+      "bootstrap_low": 0.00022222222222222242,
+      "control": "concrete",
+      "mean": 0.0003888888888888893,
+      "outcome": "source_accuracy",
+      "seed_values": [
+        0.0,
+        0.0005555555555555561,
+        0.00044444444444444485,
+        0.0005555555555555561,
+        0.00033333333333333365,
+        0.00044444444444444485
+      ],
+      "subset": {},
+      "t_high": 0.0006070349229978136,
+      "t_low": 0.000170742854779965,
+      "treatment": "latent"
+    },
+    "source_brier_skill": {
+      "bootstrap_high": 0.0013417469130622018,
+      "bootstrap_low": 0.000761902994579739,
+      "control": "concrete",
+      "mean": 0.001057411785478945,
+      "outcome": "source_brier_skill",
+      "seed_values": [
+        0.00044396850797865126,
+        0.0011337863074408637,
+        0.0010319815741644965,
+        0.0016290081871880426,
+        0.0008432798915439182,
+        0.0012624462445576985
+      ],
+      "subset": {},
+      "t_high": 0.0014765050512098254,
+      "t_low": 0.0006383185197480645,
+      "treatment": "latent"
+    }
+  }
+}

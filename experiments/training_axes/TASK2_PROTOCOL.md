@@ -67,9 +67,9 @@ difference-comparison task. Effect sizes need not be equal.
 ## Remote launch
 
 ```bash
-cd /path/to/principle-reuse
-source .venv/bin/activate
-export TRAINING_PYTHON="$PWD/.venv/bin/python"
+cd /home/dpo10/Desktop/work/principle-reuse
+source .venv-gb10/bin/activate
+export TRAINING_PYTHON="$PWD/.venv-gb10/bin/python3"
 export TRAINING_JOBS=2
 
 bash experiments/training_axes/remote/gb10_native.sh task2-smoke
