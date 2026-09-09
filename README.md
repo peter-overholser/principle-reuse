@@ -10,6 +10,46 @@ answers on the distribution used to establish mastery.
 
 ![Validation mastery and locked deployment generalization](assets/v2_overview.png)
 
+## How the experiment works
+
+The task has a deliberately simple hidden world: ten positions arranged in a
+strict order. Six disjoint token alphabets give those positions different names.
+Two logically equivalent grammars express each comparison as `x LT y` or
+`y GT x`. The principle to be reused is the same ordered relation across all of
+these surface systems.
+
+Training contains every alphabet, grammar, token, label, and relevant kind of
+comparison, but not every *combination* of them. Of the twelve possible
+alphabet–grammar combinations, eight are used for training, two are reserved
+for development, and two are kept locked. A locked combination therefore joins
+a familiar alphabet to a familiar grammar in a way the model has never seen.
+Eleven latent item pairs are also withheld in every rendering. This creates
+separate tests of a new rendering, a new latent pair, and both shifts together.
+Ordinary validation draws fresh cases from the same combinations and relation
+support as training, so it measures mastery without answering the broader
+generalization question.
+
+Every objective receives the same paired examples, answer labels, number of
+forward passes, and optimization budget. What differs is the learning signal:
+
+- **Concrete:** binary answer loss only.
+- **Output invariant:** answer loss plus agreement between predictions for two
+  renderings of the same latent query.
+- **Structural auxiliary:** output invariance plus hidden-state alignment,
+  signed rank-gap supervision, and alignment of the rank map across alphabets.
+
+The structural objective deliberately reveals the certified correspondence
+among renderings. It is used as a positive-control intervention: if this signal
+changes later generalization while familiar validation performance is held
+fixed, training has selected a differently organized solution.
+
+Models are evaluated at eleven checkpoints. Alongside accuracy and Brier skill,
+the study tests whether a source-fitted latent probe transfers without refitting,
+whether alphabet-specific rank directions align, and whether a source-identified
+direction can causally change predictions in a held-out rendering. This makes it
+possible to compare behavioral reuse, represented structure, and causal use as
+they develop after task mastery.
+
 ## Main result
 
 The completed V2 experiment trained 324 small transformers in a fully crossed
