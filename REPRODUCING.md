@@ -108,8 +108,8 @@ shasum -a 256 -c CHECKSUMS.sha256
 ```
 
 The checksum file covers both experiments' manifests, protocols, frozen and
-locked reports, summary outputs, analysis code, figures, and four raw-result
-directories.
+locked reports, summary outputs, analysis code, figures, and raw-result
+directories, including the V8 release.
 
 ## 9. Reproduce Task 2
 
@@ -161,3 +161,77 @@ python -m experiments.training_axes.plot_cross_task
 files have eleven registered checkpoints, all identifiers join one-to-one, and
 the manifest, protocol, development-result tree, pre-unlock analysis, frozen
 contrasts, and pre-unlock report still match their recorded SHA-256 digests.
+
+## 10. Verify the released V8 study
+
+V8 is a 264-run fresh-lock decomposition of the structural objective. The
+public release includes the exact frozen implementation, protocol, manifest,
+development trajectories, gradient diagnostics, locked trajectories, and
+registered reports. Model checkpoints are omitted because the complete tree is
+substantially larger than the analysis artifact.
+
+Recompute every released locked statistic and verify the frozen source trees,
+code hashes, locked tree, analysis JSON, and report with:
+
+```bash
+python -m experiments.training_axes.verify_released_v8
+```
+
+Expected output:
+
+```text
+V8 public release verified: 264 locked runs; route=embedding-tying-dominates
+```
+
+The verifier intentionally does not replace the preregistered unlock path. The
+original `analyze_locked_v8.py` additionally verifies all 2,904 frozen model
+checkpoints before constructing or reading the locked evaluation. The public
+verifier begins from the released JSONL trajectories and verifies them against
+the hashes recorded during that unlock.
+
+To train an independent replication, first validate the implementation and
+regenerate the manifest:
+
+```bash
+python -m unittest experiments.training_axes.test_v8
+python -m experiments.training_axes.design_v8 \
+  --out /tmp/v8_manifest_regenerated.csv
+cmp /tmp/v8_manifest_regenerated.csv \
+  experiments/training_axes/v8_manifest.csv
+```
+
+Then train the complete manifest:
+
+```bash
+python -m experiments.training_axes.run_manifest \
+  experiments/training_axes/v8_manifest.csv \
+  --device cuda --jobs 2 --execute \
+  --results-dir /tmp/principle-reuse-v8/results \
+  --checkpoints-dir /tmp/principle-reuse-v8/checkpoints
+```
+
+An independent replication should create and preserve its own development
+freeze before constructing locked examples. The registered sequence is:
+
+```bash
+python -m experiments.training_axes.analyze_preunlock_v8 \
+  --results /tmp/principle-reuse-v8/results \
+  --checkpoints /tmp/principle-reuse-v8/checkpoints \
+  --out-json /tmp/principle-reuse-v8/preunlock.json \
+  --out-report /tmp/principle-reuse-v8/PREUNLOCK.md
+
+python -m experiments.training_axes.evaluate_all_locked \
+  /tmp/principle-reuse-v8/checkpoints \
+  --out-dir /tmp/principle-reuse-v8/locked \
+  --device cuda --jobs 2
+
+python -m experiments.training_axes.analyze_locked_v8 \
+  --results /tmp/principle-reuse-v8/locked \
+  --checkpoints /tmp/principle-reuse-v8/checkpoints \
+  --freeze /tmp/principle-reuse-v8/preunlock.json \
+  --out-json /tmp/principle-reuse-v8/locked_analysis.json \
+  --out-report /tmp/principle-reuse-v8/LOCKED_REPORT.md
+```
+
+Do not run the locked evaluator unless the independent pre-unlock report says
+`Decision: unlock`.

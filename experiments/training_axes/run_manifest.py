@@ -26,6 +26,21 @@ def command(row: dict, args) -> list[str]:
         "learning_rate": "--learning-rate", "invariant_weight": "--invariant-weight",
         "representation_weight": "--representation-weight",
         "latent_weight": "--latent-weight", "mapping_weight": "--mapping-weight",
+        "bottleneck_dim": "--bottleneck-dim",
+        "aux_schedule": "--aux-schedule", "aux_fraction": "--aux-fraction",
+        "aux_updates": "--aux-updates", "rule_signal": "--rule-signal",
+        "bridge_signal": "--bridge-signal", "reset_step": "--reset-step",
+        "v3_arm": "--v3-arm",
+        "source_only_eval": "--source-only-eval",
+        "aux_mode": "--aux-mode", "aux_bank_size": "--aux-bank-size",
+        "aux_batch_size": "--aux-batch-size", "v4_arm": "--v4-arm",
+        "v5_arm": "--v5-arm",
+        "representation_signal": "--representation-signal",
+        "mapping_signal": "--mapping-signal",
+        "output_invariant_signal": "--output-invariant-signal",
+        "mapping_control": "--mapping-control",
+        "gap_head_mode": "--gap-head-mode",
+        "v8_split": "--v8-split", "v8_arm": "--v8-arm",
     }
     for field, flag in optional.items():
         if row.get(field, ""):
@@ -46,6 +61,8 @@ def command(row: dict, args) -> list[str]:
         if row["config_id"] != expected:
             raise ValueError(f"unexpected task-2 config_id: {row['config_id']}")
         value += ["--run-prefix", "v3"]
+    if row.get("config_id", ""):
+        value += ["--config-id", row["config_id"]]
     if args.device:
         value += ["--device", args.device]
     if args.results_dir:

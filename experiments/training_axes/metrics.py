@@ -50,6 +50,9 @@ def behavior_metrics(model, dataset, device, prefix: str) -> dict[str, float]:
     result = {
         f"{prefix}_accuracy": float(np.mean(prediction == (y > 0.5))),
         f"{prefix}_brier_skill": float(np.mean(brier_skill(probability, y))),
+        f"{prefix}_log_loss": float(
+            np.mean(np.logaddexp(0.0, logit) - y * logit)
+        ),
         f"{prefix}_confidence": float(np.mean(np.maximum(probability, 1 - probability))),
     }
     distance = np.asarray([row["distance"] for row in metadata])
@@ -65,6 +68,37 @@ def behavior_metrics(model, dataset, device, prefix: str) -> dict[str, float]:
             result[f"{prefix}_brier_skill_{name}"] = float(
                 np.mean(brier_skill(probability[selected], y[selected]))
             )
+            result[f"{prefix}_log_loss_{name}"] = float(
+                np.mean(
+                    np.logaddexp(0.0, logit[selected])
+                    - y[selected] * logit[selected]
+                )
+            )
+    if metadata and all("grammar" in row for row in metadata):
+        grammar = np.asarray([int(row["grammar"]) for row in metadata])
+        for value in sorted(set(grammar)):
+            selected = grammar == value
+            result[f"{prefix}_accuracy_grammar{value}"] = float(
+                np.mean(prediction[selected] == (y[selected] > 0.5))
+            )
+            result[f"{prefix}_brier_skill_grammar{value}"] = float(
+                np.mean(brier_skill(probability[selected], y[selected]))
+            )
+            result[f"{prefix}_log_loss_grammar{value}"] = float(
+                np.mean(
+                    np.logaddexp(0.0, logit[selected])
+                    - y[selected] * logit[selected]
+                )
+            )
+    if metadata and all("shortcut_label" in row for row in metadata):
+        shortcut = np.asarray([row["shortcut_label"] for row in metadata]) > 0.5
+        shortcut_probability = np.where(shortcut, probability, 1.0 - probability)
+        result[f"{prefix}_shortcut_agreement"] = float(
+            np.mean(prediction == shortcut)
+        )
+        result[f"{prefix}_shortcut_probability"] = float(
+            np.mean(shortcut_probability)
+        )
     return result
 
 
@@ -138,8 +172,18 @@ def paired_invariance(
 
 def embedding_structure(model, task_module=task) -> dict[str, float]:
     """Shared rank-axis alignment and effective rank of item embeddings."""
-    embedding = model.emb.weight[:task_module.N_ITEM_TOKENS].detach().float().cpu().numpy()
-    embedding = embedding.reshape(task_module.N_ALPH, task_module.N_ITEMS, -1)
+    weights = (
+        model.effective_embedding_weights()
+        if hasattr(model, "effective_embedding_weights") else model.emb.weight
+    )
+    token_ids = getattr(task_module, "ITEM_TOKEN_IDS", None)
+    if token_ids is None:
+        embedding = weights[:task_module.N_ITEM_TOKENS]
+        embedding = embedding.reshape(task_module.N_ALPH, task_module.N_ITEMS, -1)
+    else:
+        indices = torch.as_tensor(token_ids, device=weights.device, dtype=torch.long)
+        embedding = weights[indices]
+    embedding = embedding.detach().float().cpu().numpy()
     rank = np.arange(task_module.N_ITEMS, dtype=float)
     rank -= rank.mean()
     directions = []
@@ -172,11 +216,33 @@ def parameter_structure(model) -> dict[str, float]:
         values = parameter.detach().float()
         squared_norm += float(torch.sum(values * values).cpu())
         count += parameter.numel()
-    return {
+    result = {
         "parameter_l2": math.sqrt(squared_norm),
         "parameter_rms": math.sqrt(squared_norm / max(count, 1)),
         "parameter_count": float(count),
     }
+    bottleneck = getattr(model, "bottleneck", None)
+    if bottleneck is None:
+        result.update({
+            "bottleneck_present": 0.0,
+            "bottleneck_active_dim": float(model.d),
+            "bottleneck_active_fraction": 1.0,
+            "bottleneck_effective_rank": float(model.d),
+        })
+    else:
+        with torch.no_grad():
+            mask = torch.diag(bottleneck.active_mask.to(bottleneck.down.weight))
+            channel = bottleneck.up.weight @ mask @ bottleneck.down.weight
+            singular = torch.linalg.svdvals(channel.float()).cpu().numpy()
+        energy = singular ** 2
+        effective_rank = energy.sum() ** 2 / max(np.sum(energy ** 2), 1e-12)
+        result.update({
+            "bottleneck_present": 1.0,
+            "bottleneck_active_dim": float(bottleneck.active_dim),
+            "bottleneck_active_fraction": float(bottleneck.active_dim / bottleneck.d),
+            "bottleneck_effective_rank": float(effective_rank),
+        })
+    return result
 
 
 def _write_direction(H: np.ndarray, variable: np.ndarray) -> np.ndarray:
@@ -275,13 +341,23 @@ def evaluate_checkpoint(
     include_locked: bool = False,
     structural_pairs: int = 512,
     task_module=task,
+    source_only: bool = False,
 ) -> dict[str, float]:
     result = {}
-    allowed = ["source", "source_all", "calib_combo"]
+    allowed = ["source", "source_all"]
+    if not source_only:
+        allowed.append("calib_combo")
     if include_locked:
         allowed += ["test_combo", "held_pair", "test_both"]
     for name in allowed:
         result.update(behavior_metrics(model, datasets[name], device, name))
+    if source_only:
+        result.update(paired_invariance(
+            model, device, seed, structural_pairs, task_module=task_module
+        ))
+        result.update(embedding_structure(model, task_module=task_module))
+        result.update(parameter_structure(model))
+        return result
     result.update(latent_probe_transfer(
         model, datasets["source"], datasets["calib_combo"], device
     ))

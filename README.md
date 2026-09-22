@@ -10,6 +10,13 @@ answers on the distribution used to establish mastery.
 
 ![Validation mastery and locked deployment generalization across two tasks](assets/cross_task_overview.png)
 
+The current public release adds **V8**, a 264-run, fresh-seed and fresh-lock
+factorial study that identifies which part of the structural training signal
+selects the transferable solution. The earlier V2 and Task 2 studies remain in
+the repository as independent behavioral demonstrations. A subsequent study of
+whether comparable organization can emerge from ordinary data structure is in
+progress and is not included in this release.
+
 ## How the experiment works
 
 The first task has a deliberately simple hidden world: ten positions arranged
@@ -56,8 +63,50 @@ they develop after task mastery.
 
 ## Main results
 
-The release contains 486 completed small-transformer runs across two registered
-experiments. V2 trained 324 models in a fully crossed design:
+### V8: semantic correspondence selects the reusable solution
+
+V8 uses new token permutations, latent holdouts, evaluation seeds, and rotated
+development and locked alphabets. It crosses three components of the structural
+objective as a complete factorial:
+
+- **E:** correct item-embedding correspondence across alphabets;
+- **H:** final-hidden-state matching across paired renderings; and
+- **G:** a shared signed-gap readout.
+
+It also includes concrete, invariant-only, permuted-correspondence, and
+alphabet-specific-readout controls. All 264 configurations satisfy the
+registered source-mastery gate. Full, E-only, and H+G models are equivalent to
+the invariant baseline on source accuracy, Brier skill, overall log loss, and
+near-margin log loss.
+
+The independently locked results localize the generalization effect:
+
+| Locked combination contrast | Order | Differences |
+|---|---:|---:|
+| Full minus invariant-only | +0.565 [+0.389, +0.741] | +0.497 [+0.275, +0.718] |
+| E-only minus full | -0.057 [-0.087, -0.027] | +0.008 [+0.001, +0.015] |
+| H+G without E minus invariant-only | -0.018 [-0.137, +0.101] | +0.091 [-0.218, +0.401] |
+| Permuted E minus valid E-only | -0.514 [-0.655, -0.373] | -0.314 [-0.479, -0.148] |
+
+The registered route is **`embedding-tying-dominates`**. Correct semantic
+correspondence is the only component with a clear marginal effect across both
+tasks. Hidden matching contributes no detectable increment. E-only is already
+strong; descriptively, E+G is the smallest objective that matches the full
+objective on both tasks. The permuted control shows that generic tying or
+regularization does not explain the result.
+
+This is a controlled solution-selection result, not a claim of spontaneous
+abstraction: E supplies privileged cross-rendering correspondence. See the
+[V8 protocol](experiments/training_axes/V8_PROTOCOL.md),
+[pre-unlock report](experiments/training_axes/V8_PREUNLOCK_REPORT.md),
+[locked report](experiments/training_axes/V8_LOCKED_REPORT.md), and
+[post-lock assessment](experiments/training_axes/V8_LOCKED_ASSESSMENT.md).
+
+### Original locked studies
+
+The release also contains the original 486 completed small-transformer runs
+across two registered experiments. V2 trained 324 models in a fully crossed
+design:
 
 - three objectives: concrete answer supervision, output invariance, and
   structural auxiliary supervision;
@@ -124,6 +173,7 @@ pip install -r requirements-analysis.txt
 python -m experiments.training_axes.task
 python -m experiments.training_axes.analyze_locked_v2
 python -m experiments.training_axes.analyze_locked_task2
+python -m experiments.training_axes.verify_released_v8
 python -m experiments.training_axes.plot_cross_task
 ```
 
@@ -133,6 +183,9 @@ These commands regenerate:
 - `experiments/training_axes/v2_locked_contrasts.json`;
 - `experiments/training_axes/V2_LOCKED_REPORT.md`;
 - the corresponding Task 2 locked cells, contrasts, and report; and
+- verification and complete recomputation of the released V8 locked analysis;
+- validation of the V8 development, diagnostic, and locked result-tree hashes;
+  and
 - `assets/cross_task_overview.png` and `assets/cross_task_overview.pdf`.
 
 See [REPRODUCING.md](REPRODUCING.md) for the end-to-end training and locked-test
@@ -157,6 +210,19 @@ repository includes:
   [locked report](experiments/training_axes/TASK2_LOCKED_REPORT.md); and
 - all 162 Task 2 development and 162 locked trajectories.
 
+For V8 it also includes:
+
+- the [registered protocol](experiments/training_axes/V8_PROTOCOL.md) and exact
+  264-run [manifest](experiments/training_axes/v8_manifest.csv);
+- the [development freeze](experiments/training_axes/V8_PREUNLOCK_REPORT.md) and
+  machine-readable `v8_preunlock_freeze.json`;
+- all 264 development trajectories, 264 gradient-diagnostic trajectories, and
+  264 locked trajectories;
+- the [registered locked report](experiments/training_axes/V8_LOCKED_REPORT.md)
+  and machine-readable `v8_locked_analysis.json`; and
+- `verify_released_v8.py`, which recomputes every released locked statistic
+  without requiring the unreleased model checkpoints.
+
 The V2 manifest SHA-256 recorded before unlock is
 `69651ec8f7129706b0dd4730921657a4ea028e9ad33e414f1b5c3c152d3497ed`.
 The corresponding Task 2 digest is
@@ -180,14 +246,22 @@ experiments/training_axes/design_task2.py
 experiments/training_axes/analyze_locked_task2.py
 experiments/training_axes/results_task2/
 experiments/training_axes/locked_results_task2/
+experiments/training_axes/task_v8.py
+experiments/training_axes/design_v8.py
+experiments/training_axes/analyze_v8_common.py
+experiments/training_axes/verify_released_v8.py
+experiments/training_axes/results_v8/
+experiments/training_axes/locked_results_v8/
 ```
 
 ## Scope
 
 This release supports claims about controlled synthetic tasks and small
-transformers. It does **not** establish spontaneous principle discovery,
-generality across natural-language tasks, irreversible developmental path
-dependence, or normative alignment. Those are follow-up questions.
+transformers. It establishes that correct semantic correspondence can select a
+reusable solution within a tightly matched source-performance fiber. It does
+**not** establish spontaneous principle discovery, generality across
+natural-language tasks, irreversible developmental path dependence, or
+normative alignment. Those are follow-up questions.
 
 ## Citation
 

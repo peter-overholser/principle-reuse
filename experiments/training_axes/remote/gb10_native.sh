@@ -20,7 +20,7 @@ run_python() {
 
 usage() {
   printf '%s\n' \
-    "usage: $0 check|smoke|gate|pilot|analyze|v2-smoke|v2|analyze-v2|unlock-v2|task2-smoke|task2|analyze-task2|unlock-task2" \
+    "usage: $0 check|smoke|gate|pilot|analyze|v2-smoke|v2|analyze-v2|unlock-v2|task2-smoke|task2|analyze-task2|unlock-task2|v8-smoke|v8|analyze-v8|unlock-v8|analyze-locked-v8|verify-released-v8" \
     "" \
     "Environment overrides:" \
     "  TRAINING_PYTHON  Python executable with CUDA PyTorch" \
@@ -120,6 +120,38 @@ case "${1:-}" in
       experiments/training_axes/checkpoints_task2 \
       --out-dir experiments/training_axes/locked_results_task2 \
       --device cuda --jobs "${JOBS}"
+    ;;
+  v8-smoke)
+    smoke_root="$(mktemp -d "${TMPDIR:-/tmp}/principle_v8_smoke.XXXXXX")"
+    smoke_manifest="${smoke_root}/manifest.csv"
+    run_python -m experiments.training_axes.design_v8 \
+      --smoke --seeds 1 --out "${smoke_manifest}"
+    run_python -m experiments.training_axes.run_manifest \
+      "${smoke_manifest}" --device cuda --jobs 1 --execute \
+      --no-save-checkpoints --results-dir "${smoke_root}/results"
+    ;;
+  v8)
+    run_python -m experiments.training_axes.run_manifest \
+      experiments/training_axes/v8_manifest.csv \
+      --device cuda --jobs "${JOBS}" --execute \
+      --results-dir experiments/training_axes/results_v8 \
+      --checkpoints-dir experiments/training_axes/checkpoints_v8
+    ;;
+  analyze-v8)
+    run_python -m experiments.training_axes.analyze_preunlock_v8
+    ;;
+  unlock-v8)
+    run_python -m experiments.training_axes.analyze_locked_v8 --verify-only
+    run_python -m experiments.training_axes.evaluate_all_locked \
+      experiments/training_axes/checkpoints_v8 \
+      --out-dir experiments/training_axes/locked_results_v8 \
+      --device cuda --jobs "${JOBS}"
+    ;;
+  analyze-locked-v8)
+    run_python -m experiments.training_axes.analyze_locked_v8
+    ;;
+  verify-released-v8)
+    run_python -m experiments.training_axes.verify_released_v8
     ;;
   *)
     usage

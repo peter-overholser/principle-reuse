@@ -55,6 +55,36 @@ class ExperimentConfig:
     representation_weight: float = 0.1
     latent_weight: float = 1.0
     mapping_weight: float = 1.0
+    # Focused V3 fields. Defaults select the exact legacy objective and model,
+    # so old manifests and checkpoints remain valid.
+    bottleneck_dim: int = 0
+    aux_schedule: str = "legacy"
+    aux_fraction: float = 1.0
+    aux_updates: int = 0
+    rule_signal: int = 0
+    bridge_signal: int = 0
+    reset_step: int = 0
+    v3_arm: str = ""
+    source_only_eval: int = 0
+    # Semi-supervised V4 fields. ``online_global`` preserves the focused-V3
+    # implementation. V4 instead draws a deterministic, fixed auxiliary bank
+    # and exposes only correspondences occurring in annotated examples.
+    aux_mode: str = "online_global"
+    aux_bank_size: int = 0
+    aux_batch_size: int = 0
+    v4_arm: str = ""
+    # Fresh-seed pressure/timing follow-up after the V4D diagnostic.
+    v5_arm: str = ""
+    # V8 objective decomposition. ``-1`` preserves the historical meaning of
+    # bridge_signal (joint hidden-representation and embedding alignment).
+    # V8 sets these explicitly so the two bridge components can be separated.
+    representation_signal: int = -1
+    mapping_signal: int = -1
+    output_invariant_signal: int = 0
+    mapping_control: str = "valid"
+    gap_head_mode: str = "shared"
+    v8_split: str = ""
+    v8_arm: str = ""
 
 
 def make_configs(seeds=range(6), smoke: bool = False) -> list[ExperimentConfig]:

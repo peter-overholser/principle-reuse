@@ -2,10 +2,12 @@
 
 ## Summary
 
-This repository contains checkpoint-level measurements from 486 small
-transformer training runs across two tasks, each with a separately evaluated
-locked deployment set. There are eleven checkpoints per run, producing 5,346
-development rows and 5,346 locked rows.
+This repository contains checkpoint-level measurements from 750 small
+transformer training runs across three registered studies and two relational
+computations. Every run has a separately evaluated locked deployment set.
+There are eleven primary checkpoints per run, producing 8,250 development rows
+and 8,250 locked rows. V8 additionally contains 11,352 objective and gradient
+diagnostic rows.
 
 The data are generated from a controlled synthetic relational task. They
 contain no human subjects, personal information, web-scraped material, or model
@@ -37,6 +39,22 @@ The Cartesian product contains 324 registered configurations.
 Weight decay is fixed at zero following its V2 behavioral null. The Cartesian
 product contains 162 registered configurations.
 
+### V8: fresh-lock objective decomposition
+
+| Factor | Levels |
+|---|---|
+| Relational computation | direct order, comparison of differences |
+| Objective components | embedding correspondence E, hidden matching H, shared gap readout G |
+| Factorial objective | complete 2 x 2 x 2 crossing of E, H, and G, always with output invariance |
+| Controls | concrete, permuted E, alphabet-specific G |
+| Transformer | width 64, two blocks |
+| Paired seed | 400–411 |
+
+The Cartesian product contains 264 registered configurations. V8 uses new item
+token permutations, latent holdout seeds, evaluation seeds, and rotated
+development and locked alphabet roles. Its development and lock therefore do
+not reuse the earlier studies' held combinations.
+
 ## Data roles
 
 | Split | Role | Change relative to training |
@@ -63,6 +81,13 @@ product contains 162 registered configurations.
 - `task2_locked_cells.csv`: joined Task 2 endpoint and mastery summaries.
 - `task2_locked_contrasts.json`: registered Task 2 contrasts and intervals.
 - `TASK2_LOCKED_REPORT.md`: human-readable Task 2 confirmatory report.
+- `v8_manifest.csv`: registered V8 configurations.
+- `results_v8/*.jsonl`: V8 development trajectories.
+- `results_v8/_diagnostics/*.jsonl`: V8 loss and gradient diagnostics.
+- `locked_results_v8/*.jsonl`: V8 locked trajectories.
+- `v8_preunlock_freeze.json`: machine-readable V8 development freeze.
+- `v8_locked_analysis.json`: machine-readable V8 confirmatory analysis.
+- `V8_LOCKED_REPORT.md`: human-readable V8 confirmatory report.
 
 JSONL files are keyed by `config_id` and `step`. Each locked file contains only
 locked outcomes and joins to its development trajectory by those two fields.
@@ -76,7 +101,9 @@ weight decay, difficulty, and capacity for V2; difficulty and capacity for Task
 
 ## Known limitations
 
-- The structural objective receives privileged latent correspondence labels.
+- The V2 and Task 2 structural objectives receive privileged latent labels and
+  correspondence information. V8 localizes most of their transferable effect
+  to correct cross-alphabet item correspondence.
 - Both tasks use known synthetic generators and closely related underlying
   order/difference relations.
 - In-distribution validation is at ceiling at the endpoint.
@@ -88,8 +115,9 @@ weight decay, difficulty, and capacity for V2; difficulty and capacity for Task
 
 ## Recommended use
 
-The data are suitable for reproducing both registered contrasts, checking
-alternative hierarchical summaries, studying post-mastery trajectories, and
-developing diagnostics for reusable internal structure. Any exploratory
-reanalyzes should be labeled as such and should preserve the distinction among
-training, development, and locked splits.
+The data are suitable for reproducing the registered contrasts, checking
+alternative hierarchical summaries, studying post-mastery trajectories,
+analyzing the V8 objective factorial, and developing diagnostics for reusable
+internal structure. Any exploratory reanalyses should be labeled as such and
+should preserve the distinction among training, development, and locked
+splits.

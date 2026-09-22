@@ -10,10 +10,16 @@ import torch
 
 from experiments.panel import model as model_library
 from experiments.training_axes import metrics, task, task_differences
+from experiments.training_axes import task_v8
 
 
 ROOT = Path(__file__).resolve().parent
-TASKS = {"order": task, "differences": task_differences}
+TASKS = {
+    "order": task,
+    "differences": task_differences,
+    "order_v8": task_v8.ORDER,
+    "differences_v8": task_v8.DIFFERENCES,
+}
 
 
 def main() -> None:
@@ -35,10 +41,13 @@ def main() -> None:
     first_saved = torch.load(paths[0], map_location=device, weights_only=True)
     task_name = first_saved["config"].get("task_name", "order")
     task_module = TASKS[task_name]
-    datasets = task_module.evaluation_sets(
-        seed=0, n=args.eval_size,
-        train_dists=first_saved["config"]["train_dists"],
-    )
+    dataset_kwargs = {
+        "seed": 0, "n": args.eval_size,
+        "train_dists": first_saved["config"]["train_dists"],
+    }
+    if first_saved["config"].get("v8_arm"):
+        dataset_kwargs["include_locked"] = True
+    datasets = task_module.evaluation_sets(**dataset_kwargs)
 
     with output.open("w") as handle:
         for path in paths:
@@ -48,6 +57,7 @@ def main() -> None:
                 config["family"], task_module.VOCAB, task_module.SEQ_LEN,
                 task_module.PAD,
                 d=config["width"], layers=config["layers"],
+                bottleneck_dim=config.get("bottleneck_dim", 0),
             ).to(device)
             model.load_state_dict(saved["model"])
             result = metrics.evaluate_checkpoint(

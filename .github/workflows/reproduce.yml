@@ -15,7 +15,9 @@ jobs:
           cache: pip
       - run: pip install -r requirements-analysis.txt
       - name: Validate task splits
-        run: python -m experiments.training_axes.task
+        run: |
+          python -m experiments.training_axes.task
+          python -m experiments.training_axes.task_v8
       - name: Reproduce locked analysis
         run: |
           python -m experiments.training_axes.analyze_locked_v2 \
@@ -25,6 +27,8 @@ jobs:
           cmp /tmp/v2_locked_cells.csv experiments/training_axes/v2_locked_cells.csv
           cmp /tmp/v2_locked_contrasts.json experiments/training_axes/v2_locked_contrasts.json
           cmp /tmp/V2_LOCKED_REPORT.md experiments/training_axes/V2_LOCKED_REPORT.md
+      - name: Verify released V8 analysis
+        run: python -m experiments.training_axes.verify_released_v8
       - name: Reproduce public figure
         run: |
           python -m experiments.training_axes.plot_v2 \
