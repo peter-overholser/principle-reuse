@@ -107,9 +107,9 @@ measurements remain missing rather than being converted to zero.
 shasum -a 256 -c CHECKSUMS.sha256
 ```
 
-The checksum file covers both experiments' manifests, protocols, frozen and
-locked reports, summary outputs, analysis code, figures, and raw-result
-directories, including the V8 release.
+The checksum file covers all released manifests, protocols, freezes, locked
+reports, summary outputs, analysis code, figures, and raw-result directories,
+including V8 and V9-B.
 
 ## 9. Reproduce Task 2
 
@@ -235,3 +235,45 @@ python -m experiments.training_axes.analyze_locked_v8 \
 
 Do not run the locked evaluator unless the independent pre-unlock report says
 `Decision: unlock`.
+
+## 11. Verify the released V9-B study
+
+V9-B is a prospective outcome-role confirmation over 192 frozen V9 endpoints.
+The public artifact contains the complete fourteen-checkpoint development
+tree, the stopped V9-A freeze, the subsequent endpoint-only V9-B freeze, the
+commitment and post-evaluation reveal, and every locked endpoint row. Model
+checkpoints are omitted.
+
+Recompute both source gates, verify the commit--reveal pair and frozen code
+hashes, reconstruct every locked statistic, and compare the registered report:
+
+```bash
+python -m experiments.training_axes.verify_released_v9b
+```
+
+Expected output:
+
+```text
+V9-B public release verified: 192 locked endpoints; route=emergence-supported
+```
+
+Regenerate the public V9-B figure with:
+
+```bash
+python -m experiments.training_axes.plot_v9b
+```
+
+The original sequence is recorded in
+[`V9B_RUNBOOK.md`](experiments/training_axes/V9B_RUNBOOK.md). Its critical
+ordering was:
+
+1. preserve V9-A's registered stop;
+2. hash all 192 update-20,000 checkpoints and verify endpoint mastery and
+   source equivalence while the reveal was absent;
+3. transfer the committed reveal only after the outcome-free freeze;
+4. evaluate exactly one locked endpoint per model; and
+5. run the registered hierarchy once.
+
+For an independent replication, generate a new salt and commitment and create
+a new untouched lock. The released reveal is public by design and must not be
+reused as a hidden test.

@@ -20,7 +20,7 @@ run_python() {
 
 usage() {
   printf '%s\n' \
-    "usage: $0 check|smoke|gate|pilot|analyze|v2-smoke|v2|analyze-v2|unlock-v2|task2-smoke|task2|analyze-task2|unlock-task2|v8-smoke|v8|analyze-v8|unlock-v8|analyze-locked-v8|verify-released-v8" \
+    "usage: $0 check|smoke|gate|pilot|analyze|v2-smoke|v2|analyze-v2|unlock-v2|task2-smoke|task2|analyze-task2|unlock-task2|v8-smoke|v8|analyze-v8|unlock-v8|analyze-locked-v8|verify-released-v8|v9-smoke|v9-pilot|analyze-v9-pilot|v9-repair|analyze-v9-repair|v9-r2-smoke|v9-r2|v9-r2-assay|analyze-v9-r2|v9|analyze-v9|unlock-v9|analyze-locked-v9|v9b-smoke|prepare-v9b|verify-v9b|unlock-v9b|analyze-locked-v9b|verify-released-v9b" \
     "" \
     "Environment overrides:" \
     "  TRAINING_PYTHON  Python executable with CUDA PyTorch" \
@@ -152,6 +152,120 @@ case "${1:-}" in
     ;;
   verify-released-v8)
     run_python -m experiments.training_axes.verify_released_v8
+    ;;
+  v9-smoke)
+    run_python -m unittest experiments.training_axes.test_v9 -v
+    smoke_root="$(mktemp -d "${TMPDIR:-/tmp}/principle_v9_smoke.XXXXXX")"
+    smoke_manifest="${smoke_root}/manifest.csv"
+    run_python -m experiments.training_axes.design_v9 \
+      --phase pilot --smoke --seeds 1 --out "${smoke_manifest}"
+    run_python -m experiments.training_axes.run_v9_jobs \
+      "${smoke_manifest}" --device cuda --jobs 1 --execute --smoke \
+      --no-save-checkpoints --results-dir "${smoke_root}/results" \
+      --checkpoints-dir "${smoke_root}/checkpoints"
+    ;;
+  v9-pilot)
+    run_python -m unittest experiments.training_axes.test_v9 -v
+    run_python -m experiments.training_axes.run_v9_jobs \
+      experiments/training_axes/v9_pilot_manifest.csv \
+      --device cuda --jobs "${JOBS}" --execute \
+      --results-dir experiments/training_axes/results_v9_pilot \
+      --checkpoints-dir experiments/training_axes/checkpoints_v9_pilot
+    ;;
+  analyze-v9-pilot)
+    run_python -m experiments.training_axes.analyze_v9_pilot
+    ;;
+  v9-repair)
+    if [[ ! -f experiments/training_axes/v9_pilot_gate.json ]]; then
+      printf '%s\n' "missing v9_pilot_gate.json; run analyze-v9-pilot first" >&2
+      exit 2
+    fi
+    run_python -c \
+      'import json; from pathlib import Path; value=json.loads(Path("experiments/training_axes/v9_pilot_gate.json").read_text()); assert value["decision"]["route"] == "repair-source-mastery"'
+    run_python -m experiments.training_axes.run_v9_jobs \
+      experiments/training_axes/v9_repair_manifest.csv \
+      --device cuda --jobs "${JOBS}" --execute --allow-step-extension \
+      --results-dir experiments/training_axes/results_v9_pilot \
+      --checkpoints-dir experiments/training_axes/checkpoints_v9_pilot
+    ;;
+  analyze-v9-repair)
+    run_python -m experiments.training_axes.analyze_v9_repair
+    ;;
+  v9-r2-smoke)
+    run_python -m unittest \
+      experiments.training_axes.test_v9 experiments.training_axes.test_v9_r2 -v
+    ;;
+  v9-r2)
+    if [[ ! -f experiments/training_axes/v9_repair_gate.json ]]; then
+      printf '%s\n' "missing v9_repair_gate.json; run analyze-v9-repair first" >&2
+      exit 2
+    fi
+    run_python -m experiments.training_axes.run_v9_jobs \
+      experiments/training_axes/v9_r2_manifest.csv \
+      --device cuda --jobs "${JOBS}" --execute \
+      --results-dir experiments/training_axes/results_v9_r2 \
+      --checkpoints-dir experiments/training_axes/checkpoints_v9_r2
+    ;;
+  v9-r2-assay)
+    run_python -m experiments.training_axes.evaluate_all_v9_r2_reliability \
+      experiments/training_axes/checkpoints_v9_r2 \
+      --out-dir experiments/training_axes/results_v9_r2_reliability \
+      --device cuda --jobs "${JOBS}"
+    ;;
+  analyze-v9-r2)
+    run_python -m experiments.training_axes.analyze_v9_r2
+    ;;
+  v9)
+    if [[ ! -f experiments/training_axes/v9_r2_gate.json ]]; then
+      printf '%s\n' "missing v9_r2_gate.json; run analyze-v9-r2 first" >&2
+      exit 2
+    fi
+    run_python -m experiments.training_axes.analyze_v9_r2 --verify-only
+    run_python -m experiments.training_axes.run_v9_jobs \
+      experiments/training_axes/v9_manifest.csv \
+      --device cuda --jobs "${JOBS}" --execute \
+      --results-dir experiments/training_axes/results_v9 \
+      --checkpoints-dir experiments/training_axes/checkpoints_v9
+    ;;
+  analyze-v9)
+    run_python -m experiments.training_axes.analyze_preunlock_v9
+    ;;
+  unlock-v9)
+    run_python -m experiments.training_axes.analyze_locked_v9 --verify-only
+    run_python -m experiments.training_axes.evaluate_all_locked_v9 \
+      experiments/training_axes/checkpoints_v9 \
+      --out-dir experiments/training_axes/locked_results_v9 \
+      --device cuda --jobs "${JOBS}"
+    ;;
+  analyze-locked-v9)
+    run_python -m experiments.training_axes.analyze_locked_v9
+    ;;
+  v9b-smoke)
+    run_python -m unittest \
+      experiments.training_axes.test_v9 experiments.training_axes.test_v9b
+    ;;
+  prepare-v9b)
+    if [[ -e experiments/training_axes/v9b_lock_reveal.txt ]]; then
+      printf '%s\n' "V9-B reveal is already present; use a new salt for replication" >&2
+      exit 2
+    fi
+    run_python -m experiments.training_axes.prepare_v9b
+    ;;
+  verify-v9b)
+    run_python -m experiments.training_axes.analyze_locked_v9b --verify-only
+    ;;
+  unlock-v9b)
+    run_python -m experiments.training_axes.analyze_locked_v9b --verify-only
+    run_python -m experiments.training_axes.evaluate_all_locked_v9b \
+      experiments/training_axes/checkpoints_v9 \
+      --out-dir experiments/training_axes/locked_results_v9b \
+      --device cuda --jobs "${JOBS}"
+    ;;
+  analyze-locked-v9b)
+    run_python -m experiments.training_axes.analyze_locked_v9b
+    ;;
+  verify-released-v9b)
+    run_python -m experiments.training_axes.verify_released_v9b
     ;;
   *)
     usage

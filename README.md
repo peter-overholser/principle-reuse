@@ -8,14 +8,15 @@ shared internal relation that can be reused across new renderings, domain
 combinations, and latent cases—not merely whether the model returns correct
 answers on the distribution used to establish mastery.
 
-![Validation mastery and locked deployment generalization across two tasks](assets/cross_task_overview.png)
+![Shared anchors and coverage diversity induce reusable structure](assets/v9b_emergence.png)
 
-The current public release adds **V8**, a 264-run, fresh-seed and fresh-lock
-factorial study that identifies which part of the structural training signal
-selects the transferable solution. The earlier V2 and Task 2 studies remain in
-the repository as independent behavioral demonstrations. A subsequent study of
-whether comparable organization can emerge from ordinary data structure is in
-progress and is not included in this release.
+The current public release adds **V9-B**, a prospective locked confirmation
+that comparable organization can emerge from ordinary data structure rather
+than a privileged correspondence loss. The preceding V8 factorial identifies
+semantic correspondence as the active component of structural supervision;
+V9 asks whether shared lexical anchors and broader context coverage can induce
+the same kind of organization using ordinary task labels alone. V2 and Task 2
+remain as independent demonstrations of the mastery--reuse separation.
 
 ## How the experiment works
 
@@ -62,6 +63,55 @@ possible to compare behavioral reuse, represented structure, and causal use as
 they develop after task mastery.
 
 ## Main results
+
+### V9-B: reusable organization emerges from data structure
+
+V9 trains width-64, two-block transformers from scratch on two latent
+geometries: a line and a circle. Each task has eight lexicons and four
+equivalent grammars. Six ordinary-label arms cross shared-anchor fraction
+(`0`, `0.25`, `0.50`) with high-confound or diverse lexicon--grammar coverage.
+Two controls impose either the correct semantic correspondence or a different
+incorrect permutation in every lexicon.
+
+The primary evaluation contains none of the six possible anchor entities.
+Shared tokens therefore cannot solve it directly: any benefit must propagate
+from the anchored items to the unshared vocabulary and then across a novel
+structural role.
+
+The original V9-A gate stopped because one of 192 models had source accuracy
+0.892 at the interim 15,000-update checkpoint. It subsequently reached 0.986
+accuracy and 0.966 Brier skill at update 20,000, and all 192 endpoint models
+satisfied source mastery and the registered between-arm equivalence margins.
+V9-A remains formally stopped. V9-B was registered afterward, froze all 192
+existing endpoints without retraining or exclusion, and evaluated a newly
+salted locked instance under a published commit--reveal protocol.
+
+The complete registered hierarchy returned **`emergence-supported`** on both
+scaffolds:
+
+| Locked H-lock-s contrast | Line | Circle |
+|---|---:|---:|
+| A50 + diverse minus no-anchor/high-confound accuracy | +0.334 [+0.264, +0.403] | +0.275 [+0.203, +0.347] |
+| A50 + diverse minus baseline organization | +0.717 [+0.633, +0.800] | +0.688 [+0.611, +0.764] |
+| A50 minus A0 within diverse coverage | +0.196 [+0.054, +0.339] | +0.246 [+0.146, +0.346] |
+| Imposed correspondence minus baseline accuracy | +0.265 [+0.155, +0.375] | +0.264 [+0.147, +0.382] |
+
+Every primary behavioral and organization contrast was positive in all 24
+scaffold--seed pairs. The primary arm's causal interchange gate was valid in
+12/12 seeds on each scaffold, versus 1/12 for each baseline. Correctly induced
+organization reached or exceeded the imposed-correspondence control
+descriptively, while the permuted control remained near baseline.
+
+The factorial secondary results sharpen the interpretation. Diversity at 50%
+anchors was beneficial on both line (+0.091) and circle (+0.189), whereas
+diversity without anchors was inconclusive. The evidence therefore supports
+anchors as the principal semantic bridge, with diverse coverage helping that
+alignment propagate; it does not establish that diversity alone is sufficient.
+
+See the [V9-B protocol](experiments/training_axes/V9B_PROTOCOL.md),
+[outcome-free endpoint freeze](experiments/training_axes/V9B_PREUNLOCK_REPORT.md),
+[locked report](experiments/training_axes/V9B_LOCKED_REPORT.md), and
+[machine-checkable release verifier](experiments/training_axes/verify_released_v9b.py).
 
 ### V8: semantic correspondence selects the reusable solution
 
@@ -174,7 +224,9 @@ python -m experiments.training_axes.task
 python -m experiments.training_axes.analyze_locked_v2
 python -m experiments.training_axes.analyze_locked_task2
 python -m experiments.training_axes.verify_released_v8
+python -m experiments.training_axes.verify_released_v9b
 python -m experiments.training_axes.plot_cross_task
+python -m experiments.training_axes.plot_v9b
 ```
 
 These commands regenerate:
@@ -185,8 +237,9 @@ These commands regenerate:
 - the corresponding Task 2 locked cells, contrasts, and report; and
 - verification and complete recomputation of the released V8 locked analysis;
 - validation of the V8 development, diagnostic, and locked result-tree hashes;
-  and
-- `assets/cross_task_overview.png` and `assets/cross_task_overview.pdf`.
+- complete recomputation of the V9 source gates and prospective locked
+  analysis, including the public commit--reveal check; and
+- `assets/cross_task_overview.*` and `assets/v9b_emergence.*`.
 
 See [REPRODUCING.md](REPRODUCING.md) for the end-to-end training and locked-test
 workflow. See [DATA_CARD.md](DATA_CARD.md) for the split definitions, file
@@ -223,6 +276,20 @@ For V8 it also includes:
 - `verify_released_v8.py`, which recomputes every released locked statistic
   without requiring the unreleased model checkpoints.
 
+For V9 it includes:
+
+- the original [V9-A protocol](experiments/training_axes/V9_PROTOCOL.md), its
+  stopped [development report](experiments/training_axes/V9_PREUNLOCK_REPORT.md),
+  and machine-readable `v9_preunlock_freeze.json`;
+- the prospective [V9-B protocol](experiments/training_axes/V9B_PROTOCOL.md),
+  [endpoint freeze](experiments/training_axes/V9B_PREUNLOCK_REPORT.md), and
+  [locked report](experiments/training_axes/V9B_LOCKED_REPORT.md);
+- all 192 fourteen-checkpoint development trajectories and all 192 locked
+  endpoint rows;
+- the precommitted lock digest and post-evaluation reveal; and
+- `verify_released_v9b.py`, which reconstructs the source gates and every
+  locked statistic without the unreleased model checkpoints.
+
 The V2 manifest SHA-256 recorded before unlock is
 `69651ec8f7129706b0dd4730921657a4ea028e9ad33e414f1b5c3c152d3497ed`.
 The corresponding Task 2 digest is
@@ -252,15 +319,23 @@ experiments/training_axes/analyze_v8_common.py
 experiments/training_axes/verify_released_v8.py
 experiments/training_axes/results_v8/
 experiments/training_axes/locked_results_v8/
+experiments/training_axes/task_v9.py
+experiments/training_axes/design_v9.py
+experiments/training_axes/V9B_PROTOCOL.md
+experiments/training_axes/verify_released_v9b.py
+experiments/training_axes/results_v9/
+experiments/training_axes/locked_results_v9b/
 ```
 
 ## Scope
 
 This release supports claims about controlled synthetic tasks and small
 transformers. It establishes that correct semantic correspondence can select a
-reusable solution within a tightly matched source-performance fiber. It does
-**not** establish spontaneous principle discovery, generality across
-natural-language tasks, irreversible developmental path dependence, or
+reusable solution within a tightly matched source-performance fiber, and that
+shared anchors plus coverage diversity can induce similar organization from
+ordinary task labels. It does **not** establish unconstrained spontaneous
+principle discovery, generality across natural-language tasks, asymptotic
+separation rather than faster development, irreversible path dependence, or
 normative alignment. Those are follow-up questions.
 
 ## Citation

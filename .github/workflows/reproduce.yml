@@ -18,6 +18,7 @@ jobs:
         run: |
           python -m experiments.training_axes.task
           python -m experiments.training_axes.task_v8
+          python -m experiments.training_axes.task_v9
       - name: Reproduce locked analysis
         run: |
           python -m experiments.training_axes.analyze_locked_v2 \
@@ -29,6 +30,8 @@ jobs:
           cmp /tmp/V2_LOCKED_REPORT.md experiments/training_axes/V2_LOCKED_REPORT.md
       - name: Verify released V8 analysis
         run: python -m experiments.training_axes.verify_released_v8
+      - name: Verify released V9-B analysis
+        run: python -m experiments.training_axes.verify_released_v9b
       - name: Reproduce public figure
         run: |
           python -m experiments.training_axes.plot_v2 \

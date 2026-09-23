@@ -1,0 +1,5 @@
+{
+  "scheme": "sha256-strip-utf8-v1",
+  "commitment": "32981c290d654269b5b364c608493d9948538ad9a14252846e4dc8f06aaded93",
+  "purpose": "V9-B concrete locked-evaluation salt"
+}
